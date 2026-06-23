@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DSA Roadmap — Akash 2026–2027</title>
+<title>DSA & SD Roadmap — Akash 2026–2027</title>
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -93,12 +93,20 @@
     color: var(--muted); transition: all 0.15s; box-shadow: var(--shadow);
   }
   .phase-tab:hover { color: var(--text); border-color: var(--accent); }
+  
+  /* DSA Tab Colors */
   .phase-tab[data-phase="0"].active { background: rgba(91,77,224,0.12); color: #5b4de0; border-color: rgba(91,77,224,0.4); }
   .phase-tab[data-phase="1"].active { background: rgba(15,157,139,0.12); color: #0f9d8b; border-color: rgba(15,157,139,0.4); }
   .phase-tab[data-phase="2"].active { background: rgba(224,63,57,0.1); color: #e03f39; border-color: rgba(224,63,57,0.4); }
   .phase-tab[data-phase="3"].active { background: rgba(196,154,0,0.12); color: #c49a00; border-color: rgba(196,154,0,0.4); }
   .phase-tab[data-phase="4"].active { background: rgba(139,53,214,0.1); color: #8b35d6; border-color: rgba(139,53,214,0.4); }
   .phase-tab[data-phase="5"].active { background: rgba(217,95,26,0.1); color: #d95f1a; border-color: rgba(217,95,26,0.4); }
+  
+  /* SD Tab Colors */
+  .phase-tab[data-phase="6"].active { background: rgba(14,116,144,0.12); color: #0e7490; border-color: rgba(14,116,144,0.4); }
+  .phase-tab[data-phase="7"].active { background: rgba(29,78,216,0.12); color: #1d4ed8; border-color: rgba(29,78,216,0.4); }
+  .phase-tab[data-phase="8"].active { background: rgba(190,24,93,0.12); color: #be185d; border-color: rgba(190,24,93,0.4); }
+  .phase-tab[data-phase="9"].active { background: rgba(4,120,87,0.12); color: #047857; border-color: rgba(4,120,87,0.4); }
 
   /* PHASE BLOCK */
   .phase-block { display: none; }
@@ -164,9 +172,7 @@
   .phase-section.visible { display: block; }
 
   /* PATTERN CARDS */
-  .patterns-grid {
-    display: flex; flex-direction: column; gap: 12px;
-  }
+  .patterns-grid { display: flex; flex-direction: column; gap: 12px; }
   .pattern-card {
     background: var(--surface); border: 1px solid var(--border);
     border-radius: 10px; overflow: hidden;
@@ -181,9 +187,7 @@
   }
   .pattern-header:hover { background: #f0eeff; }
 
-  .pattern-dot {
-    width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0;
-  }
+  .pattern-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
   .pattern-name { font-size: 14px; font-weight: 700; color: var(--text); flex: 1; }
   .pattern-qcount {
     font-family: var(--mono); font-size: 10px; color: var(--muted);
@@ -203,9 +207,7 @@
 
   /* QUESTIONS TABLE */
   .questions-table { width: 100%; border-collapse: collapse; }
-  .questions-table thead tr {
-    background: var(--surface2);
-  }
+  .questions-table thead tr { background: var(--surface2); }
   .questions-table th {
     font-family: var(--mono); font-size: 9px; letter-spacing: 2px;
     text-transform: uppercase; color: var(--muted);
@@ -234,10 +236,10 @@
   }
   .plat-badge.lc { background: rgba(224,63,57,0.08); color: #c0302b; }
   .plat-badge.gfg { background: rgba(15,157,139,0.08); color: #0b7d70; }
+  .plat-badge.yt { background: rgba(196,154,0,0.08); color: #9a7800; }
+  .plat-badge.read { background: rgba(91,77,224,0.08); color: #5b4de0; }
 
-  .q-done-checkbox {
-    width: 15px; height: 15px; cursor: pointer; accent-color: var(--accent);
-  }
+  .q-done-checkbox { width: 15px; height: 15px; cursor: pointer; accent-color: var(--accent); }
 
   /* WEEK CARDS */
   .weeks-section-title {
@@ -289,22 +291,17 @@
   .day-row.rest .day-label { color: var(--muted2); }
   .day-row.rest .day-content { color: var(--muted); font-style: italic; }
 
-  /* PHASE COLORS */
-  .p0 .phase-accent-bar { background: var(--accent); }
-  .p0 .phase-badge { background: rgba(91,77,224,0.1); color: var(--accent); }
-  .p1 .phase-accent-bar { background: var(--accent3); }
-  .p1 .phase-badge { background: rgba(15,157,139,0.1); color: var(--accent3); }
-  .p2 .phase-accent-bar { background: var(--accent2); }
-  .p2 .phase-badge { background: rgba(224,63,57,0.1); color: var(--accent2); }
-  .p3 .phase-accent-bar { background: var(--accent4); }
-  .p3 .phase-badge { background: rgba(196,154,0,0.1); color: var(--accent4); }
-  .p4 .phase-accent-bar { background: var(--accent5); }
-  .p4 .phase-badge { background: rgba(139,53,214,0.1); color: var(--accent5); }
-  .p5 .phase-accent-bar { background: var(--accent6); }
-  .p5 .phase-badge { background: rgba(217,95,26,0.1); color: var(--accent6); }
-  .p6 .phase-accent-bar { background: #0e7490; }
-  .p6 .phase-badge { background: rgba(14,116,144,0.1); color: #0e7490; }
-  .phase-tab[data-phase="6"].active { background: rgba(14,116,144,0.12); color: #0e7490; border-color: rgba(14,116,144,0.4); }
+  /* PHASE COLORS (Dynamic Assignment via JS) */
+  .p0 .phase-accent-bar { background: #5b4de0; } .p0 .phase-badge { background: rgba(91,77,224,0.1); color: #5b4de0; }
+  .p1 .phase-accent-bar { background: #0f9d8b; } .p1 .phase-badge { background: rgba(15,157,139,0.1); color: #0f9d8b; }
+  .p2 .phase-accent-bar { background: #e03f39; } .p2 .phase-badge { background: rgba(224,63,57,0.1); color: #e03f39; }
+  .p3 .phase-accent-bar { background: #c49a00; } .p3 .phase-badge { background: rgba(196,154,0,0.1); color: #c49a00; }
+  .p4 .phase-accent-bar { background: #8b35d6; } .p4 .phase-badge { background: rgba(139,53,214,0.1); color: #8b35d6; }
+  .p5 .phase-accent-bar { background: #d95f1a; } .p5 .phase-badge { background: rgba(217,95,26,0.1); color: #d95f1a; }
+  .p6 .phase-accent-bar { background: #0e7490; } .p6 .phase-badge { background: rgba(14,116,144,0.1); color: #0e7490; }
+  .p7 .phase-accent-bar { background: #1d4ed8; } .p7 .phase-badge { background: rgba(29,78,216,0.1); color: #1d4ed8; }
+  .p8 .phase-accent-bar { background: #be185d; } .p8 .phase-badge { background: rgba(190,24,93,0.1); color: #be185d; }
+  .p9 .phase-accent-bar { background: #047857; } .p9 .phase-badge { background: rgba(4,120,87,0.1); color: #047857; }
 
   /* WEEKLY BOX */
   .weekly-box {
@@ -345,16 +342,16 @@
 
   <header>
     <div class="tag">SDE-1 → Product Switch Prep</div>
-    <h1>System Design<span>Roadmap</span><br>2026–2027</h1>
+    <h1>System Design & DSA<span> Roadmap</span><br>2026–2027</h1>
     <p class="subtitle">Mid June 2026 → Mid June 2027 &nbsp;|&nbsp; 2 hrs/day &nbsp;|&nbsp; Product-Based Companies</p>
     <div class="stats-bar">
       <div class="stat"><span class="stat-num">365</span><span class="stat-label">Days</span></div>
       <div class="divider"></div>
-      <div class="stat"><span class="stat-num">~730</span><span class="stat-label">Hours</span></div>
+      <div class="stat"><span class="stat-num">~850</span><span class="stat-label">Hours</span></div>
       <div class="divider"></div>
-      <div class="stat"><span class="stat-num">450+</span><span class="stat-label">Questions</span></div>
+      <div class="stat"><span class="stat-num">500+</span><span class="stat-label">Tasks & Qs</span></div>
       <div class="divider"></div>
-      <div class="stat"><span class="stat-num">6</span><span class="stat-label">Phases</span></div>
+      <div class="stat"><span class="stat-num">10</span><span class="stat-label">Phases</span></div>
     </div>
   </header>
 
@@ -369,22 +366,25 @@
     <button class="phase-tab" data-phase="2" onclick="switchPhase(2)">03 Trees & Graphs</button>
     <button class="phase-tab" data-phase="3" onclick="switchPhase(3)">04 Sorting & BS</button>
     <button class="phase-tab" data-phase="4" onclick="switchPhase(4)">05 DP</button>
-    <button class="phase-tab" data-phase="5" onclick="switchPhase(5)">06 Mocks</button>
-    <button class="phase-tab" data-phase="6" onclick="switchPhase(6)">07 System Design</button>
+    <button class="phase-tab" data-phase="5" onclick="switchPhase(5)">06 DSA Mocks</button>
+    <button class="phase-tab" data-phase="6" onclick="switchPhase(6)">07 SD Core</button>
+    <button class="phase-tab" data-phase="7" onclick="switchPhase(7)">08 HLD</button>
+    <button class="phase-tab" data-phase="8" onclick="switchPhase(8)">09 LLD</button>
+    <button class="phase-tab" data-phase="9" onclick="switchPhase(9)">10 SD Mocks</button>
   </div>
 
   <div id="allPhases"></div>
 
   <div class="weekly-box">
-    <h2>⏱ Weekly Schedule Template (2 hrs/day)</h2>
+    <h2>⏱ Weekly Schedule Template (DSA vs SD)</h2>
     <div class="week-grid">
-      <div class="day-box active"><div class="day-name">Mon</div><div class="day-task">Learn new concept (1hr) + 1 Easy problem</div></div>
-      <div class="day-box active"><div class="day-name">Tue</div><div class="day-task">1 Medium problem + dry run on paper</div></div>
-      <div class="day-box active"><div class="day-name">Wed</div><div class="day-task">1–2 Mediums (timed, 45 min each)</div></div>
+      <div class="day-box active"><div class="day-name">Mon</div><div class="day-task">Learn concept (1hr) + 1 Problem</div></div>
+      <div class="day-box active"><div class="day-name">Tue</div><div class="day-task">Medium problems + dry run on paper</div></div>
+      <div class="day-box active"><div class="day-name">Wed</div><div class="day-task">Timed solving (45 min each)</div></div>
       <div class="day-box active"><div class="day-name">Thu</div><div class="day-task">Concept revision + variations</div></div>
-      <div class="day-box active"><div class="day-name">Fri</div><div class="day-task">1 Medium + 1 Hard (no peek &lt;30 min)</div></div>
-      <div class="day-box active"><div class="day-name">Sat</div><div class="day-task">Revise — re-solve 3–4 problems you struggled with</div></div>
-      <div class="day-box rest"><div class="day-name">Sun</div><div class="day-task">Rest OR 1 contest (LC Weekly)</div></div>
+      <div class="day-box active"><div class="day-name">Fri</div><div class="day-task">Hard problem / Core practice</div></div>
+      <div class="day-box active" style="border-color: rgba(14,116,144,0.4); background: rgba(14,116,144,0.05);"><div class="day-name">Sat</div><div class="day-task"><strong>System Design Study</strong> / Mock</div></div>
+      <div class="day-box active" style="border-color: rgba(14,116,144,0.4); background: rgba(14,116,144,0.05);"><div class="day-name">Sun</div><div class="day-task"><strong>System Design Study</strong> / Rest</div></div>
     </div>
   </div>
 
@@ -394,8 +394,8 @@
       <div class="tip-card"><span class="tip-icon">🧠</span><p><strong>20 min rule</strong> — Nahi aaya toh 20 min socho, tab hint lo. Solution seedha mat dekho.</p></div>
       <div class="tip-card"><span class="tip-icon">📝</span><p><strong>Pattern-wise notes</strong> — Topic nahi, approach. "When I see X, I think Y."</p></div>
       <div class="tip-card"><span class="tip-icon">🔁</span><p><strong>Spaced repetition</strong> — 7 din baad revisit karo bina old code dekhe.</p></div>
-      <div class="tip-card"><span class="tip-icon">🏆</span><p><strong>Contests matter</strong> — LC Weekly — pressure mein solve karna alag skill hai.</p></div>
-      <div class="tip-card"><span class="tip-icon">🗣️</span><p><strong>Think aloud</strong> — Phase 6 se pehle shuru karo. Mirror ke saamne approach explain karo.</p></div>
+      <div class="tip-card"><span class="tip-icon">🗣️</span><p><strong>Think aloud</strong> — Interviews mein bolna zaroori hai. Mirror ke saamne approach explain karo.</p></div>
+      <div class="tip-card"><span class="tip-icon">🛠️</span><p><strong>Relate SD to Projects</strong> — Connect HLD/LLD concepts to your own MERN/Node.js backend builds.</p></div>
       <div class="tip-card"><span class="tip-icon">📊</span><p><strong>Track karo</strong> — Notion ya spreadsheet — topic, date, difficulty, time liya.</p></div>
     </div>
   </div>
@@ -406,733 +406,388 @@
 <script>
 // ─── PATTERN DATA ──────────────────────────────────────────────────────────
 const PATTERNS = {
-  // PHASE 0 — Foundations
+  // === DSA PATTERNS (Phases 0-5) ===
   arrays: [
-    { name: "Two Pointer", color: "#5b4de0", desc: "Jab sorted array mein pair/triplet dhundhna ho ya opposite ends se converge karna ho. O(n) solution for O(n²) problems.", questions: [
+    { name: "Two Pointer", color: "#5b4de0", desc: "Jab sorted array mein pair/triplet dhundhna ho ya opposite ends se converge karna ho.", questions: [
       { name: "Two Sum (sorted)", diff: "easy", plat: "lc", note: "Classic entry point" },
       { name: "Three Sum", diff: "medium", plat: "lc", note: "Sort + two pointer inside loop" },
       { name: "Container With Most Water", diff: "medium", plat: "lc", note: "Greedy two pointer" },
       { name: "Trapping Rain Water", diff: "hard", plat: "lc", note: "Left/right max arrays or two ptr" },
       { name: "Move Zeroes", diff: "easy", plat: "lc", note: "In-place two pointer" },
-      { name: "Remove Duplicates from Sorted Array", diff: "easy", plat: "lc", note: "Slow/fast pointer" },
-      { name: "Four Sum", diff: "medium", plat: "lc", note: "Sort + 2 loops + two pointer" },
     ]},
-    { name: "Sliding Window", color: "#0f9d8b", desc: "Fixed ya variable size window. Jab subarray/substring ka koi property optimize karni ho.", questions: [
+    { name: "Sliding Window", color: "#0f9d8b", desc: "Fixed ya variable size window. Jab subarray/substring optimize karni ho.", questions: [
       { name: "Max Sum Subarray of Size K", diff: "easy", plat: "gfg", note: "Fixed window intro" },
       { name: "Longest Substring Without Repeating Chars", diff: "medium", plat: "lc", note: "Variable window + hashset" },
       { name: "Fruits Into Baskets", diff: "medium", plat: "lc", note: "At most 2 distinct" },
       { name: "Minimum Window Substring", diff: "hard", plat: "lc", note: "Variable window + freq map" },
-      { name: "Permutation in String", diff: "medium", plat: "lc", note: "Fixed window + char count" },
-      { name: "Longest Repeating Character Replacement", diff: "medium", plat: "lc", note: "Window + max_freq trick" },
       { name: "Sliding Window Maximum", diff: "hard", plat: "lc", note: "Deque based" },
     ]},
-    { name: "Prefix Sum", color: "#e03f39", desc: "Pre-compute cumulative sums. Range sum queries O(1), subarray sum problems.", questions: [
+    { name: "Prefix Sum & Kadane", color: "#e03f39", desc: "Pre-compute cumulative sums or track max subarray.", questions: [
       { name: "Subarray Sum Equals K", diff: "medium", plat: "lc", note: "HashMap + prefix sum" },
-      { name: "Range Sum Query (Immutable)", diff: "easy", plat: "lc", note: "Basic prefix sum" },
       { name: "Product of Array Except Self", diff: "medium", plat: "lc", note: "Left+right prefix products" },
-      { name: "Find Pivot Index", diff: "easy", plat: "lc", note: "Left sum = right sum" },
-      { name: "Count of Range Sum", diff: "hard", plat: "lc", note: "Merge sort + prefix sum" },
-    ]},
-    { name: "Kadane's Algorithm", color: "#c49a00", desc: "Maximum subarray sum. Classic DP-on-array pattern. Base for many variants.", questions: [
       { name: "Maximum Subarray", diff: "medium", plat: "lc", note: "Kadane's classic" },
       { name: "Maximum Product Subarray", diff: "medium", plat: "lc", note: "Track min + max both" },
-      { name: "Maximum Sum Circular Subarray", diff: "medium", plat: "lc", note: "Total sum - min subarray" },
-      { name: "Longest Turbulent Subarray", diff: "medium", plat: "lc", note: "Kadane variant" },
-    ]},
-    { name: "Sorting-based Tricks", color: "#8b35d6", desc: "Sort first, then apply greedy or two-pointer. Changes O(n²) to O(n log n).", questions: [
-      { name: "Merge Intervals", diff: "medium", plat: "lc", note: "Sort by start, merge overlapping" },
-      { name: "Insert Interval", diff: "medium", plat: "lc", note: "Binary search insertion" },
-      { name: "Sort Colors (Dutch National Flag)", diff: "medium", plat: "lc", note: "3-way partition" },
-      { name: "Meeting Rooms II", diff: "medium", plat: "lc", note: "Sort + min heap" },
-      { name: "Largest Number", diff: "medium", plat: "lc", note: "Custom comparator sort" },
     ]},
   ],
   linked_list: [
-    { name: "Fast & Slow Pointer", color: "#5b4de0", desc: "Floyd's cycle detection. Slow moves 1 step, fast moves 2. Used for cycles, midpoints, kth from end.", questions: [
+    { name: "Pointers & Reversal", color: "#5b4de0", desc: "Fast/slow pointers and in-place reversal techniques.", questions: [
       { name: "Linked List Cycle", diff: "easy", plat: "lc", note: "Classic Floyd's" },
-      { name: "Linked List Cycle II (find start)", diff: "medium", plat: "lc", note: "Floyd's + math trick" },
       { name: "Middle of Linked List", diff: "easy", plat: "lc", note: "Slow stops at mid" },
-      { name: "Happy Number", diff: "easy", plat: "lc", note: "Cycle detection on numbers" },
-      { name: "Find Duplicate Number", diff: "medium", plat: "lc", note: "Array as implicit LL" },
-    ]},
-    { name: "In-place Reversal", color: "#0f9d8b", desc: "Reverse a LL or part of it in O(1) space. Prev/curr/next pointer dance.", questions: [
       { name: "Reverse Linked List", diff: "easy", plat: "lc", note: "Must code in sleep" },
-      { name: "Reverse Linked List II (partial)", diff: "medium", plat: "lc", note: "Reverse between positions" },
       { name: "Reverse Nodes in k-Group", diff: "hard", plat: "lc", note: "Reverse every k nodes" },
-      { name: "Palindrome Linked List", diff: "easy", plat: "lc", note: "Find mid + reverse second half" },
-      { name: "Rotate List", diff: "medium", plat: "lc", note: "Find length + reconnect" },
-    ]},
-    { name: "Merge & Sort", color: "#e03f39", desc: "Merging sorted lists, sorting LL. Merge sort on LL is natural.", questions: [
       { name: "Merge Two Sorted Lists", diff: "easy", plat: "lc", note: "Dummy head trick" },
-      { name: "Merge K Sorted Lists", diff: "hard", plat: "lc", note: "Min heap approach" },
-      { name: "Sort List", diff: "medium", plat: "lc", note: "Merge sort on LL" },
-      { name: "Add Two Numbers", diff: "medium", plat: "lc", note: "Carry propagation" },
     ]},
   ],
   stack_queue: [
-    { name: "Monotonic Stack", color: "#5b4de0", desc: "Stack maintained in sorted order. For next greater/smaller element problems. O(n) amortized.", questions: [
+    { name: "Monotonic Stack", color: "#5b4de0", desc: "Stack maintained in sorted order. For next greater/smaller element.", questions: [
       { name: "Next Greater Element I", diff: "easy", plat: "lc", note: "Mono stack intro" },
-      { name: "Next Greater Element II (circular)", diff: "medium", plat: "lc", note: "Double traverse" },
       { name: "Daily Temperatures", diff: "medium", plat: "lc", note: "Days until warmer" },
       { name: "Largest Rectangle in Histogram", diff: "hard", plat: "lc", note: "Classic mono stack" },
-      { name: "Maximal Rectangle", diff: "hard", plat: "lc", note: "Histogram row by row" },
-      { name: "Sum of Subarray Minimums", diff: "medium", plat: "lc", note: "Contribution technique" },
-      { name: "132 Pattern", diff: "medium", plat: "lc", note: "Mono stack from right" },
-    ]},
-    { name: "Stack Simulation", color: "#0f9d8b", desc: "Use stack to simulate processes — parsing, evaluation, reversals.", questions: [
       { name: "Valid Parentheses", diff: "easy", plat: "lc", note: "Must-know" },
       { name: "Min Stack", diff: "medium", plat: "lc", note: "Two stacks or tuple" },
-      { name: "Evaluate Reverse Polish Notation", diff: "medium", plat: "lc", note: "Stack calculator" },
-      { name: "Decode String", diff: "medium", plat: "lc", note: "Nested stack parsing" },
-      { name: "Asteroid Collision", diff: "medium", plat: "lc", note: "Stack + direction" },
-      { name: "Remove K Digits", diff: "medium", plat: "lc", note: "Greedy + mono stack" },
-    ]},
-    { name: "Queue & Deque", color: "#c49a00", desc: "Sliding window max/min, level order BFS, monotonic deque.", questions: [
-      { name: "Sliding Window Maximum", diff: "hard", plat: "lc", note: "Monotonic deque" },
-      { name: "Design Circular Queue", diff: "medium", plat: "lc", note: "Array-based circular" },
-      { name: "First Non-Repeating Character in Stream", diff: "medium", plat: "gfg", note: "Queue + freq map" },
-      { name: "Implement Queue using Stacks", diff: "easy", plat: "lc", note: "Two stacks" },
     ]},
   ],
   hashing: [
-    { name: "Frequency Counting", color: "#5b4de0", desc: "Count occurrences, find duplicates, check anagrams — all with HashMap/HashSet.", questions: [
+    { name: "Frequency & Sets", color: "#5b4de0", desc: "Count occurrences, detect duplicates, find intersections.", questions: [
       { name: "Two Sum", diff: "easy", plat: "lc", note: "HashMap classic" },
-      { name: "Valid Anagram", diff: "easy", plat: "lc", note: "Frequency map" },
       { name: "Group Anagrams", diff: "medium", plat: "lc", note: "Sorted key or freq tuple" },
       { name: "Top K Frequent Elements", diff: "medium", plat: "lc", note: "HashMap + bucket sort" },
-      { name: "First Unique Character in String", diff: "easy", plat: "lc", note: "Freq map" },
-      { name: "Sort Characters by Frequency", diff: "medium", plat: "lc", note: "Freq map + sort" },
-    ]},
-    { name: "Set Operations", color: "#0f9d8b", desc: "Detect duplicates, find union/intersection, mark visited in O(1).", questions: [
-      { name: "Contains Duplicate", diff: "easy", plat: "lc", note: "HashSet" },
       { name: "Longest Consecutive Sequence", diff: "medium", plat: "lc", note: "HashSet + smart iteration" },
-      { name: "Intersection of Two Arrays", diff: "easy", plat: "lc", note: "Two sets" },
-      { name: "Happy Number", diff: "easy", plat: "lc", note: "Set cycle detection" },
-      { name: "Word Pattern", diff: "easy", plat: "lc", note: "Bijection with maps" },
     ]},
   ],
-
-  // PHASE 1 — Recursion
   recursion_basics: [
-    { name: "Basic Recursion", color: "#0f9d8b", desc: "Call stack, base case, trust the recursion. Visualize as tree.", questions: [
-      { name: "Climbing Stairs (recursive)", diff: "easy", plat: "lc", note: "Fibonacci pattern" },
+    { name: "Recursion & D&C", color: "#0f9d8b", desc: "Call stack, base case, divide and conquer.", questions: [
       { name: "Power(x, n)", diff: "medium", plat: "lc", note: "Fast exponentiation" },
-      { name: "Reverse String", diff: "easy", plat: "lc", note: "Recursive swap" },
-      { name: "Generate All Subsets (recursion)", diff: "medium", plat: "gfg", note: "Include/exclude" },
-      { name: "Tower of Hanoi", diff: "medium", plat: "gfg", note: "Classic 3-peg" },
-    ]},
-    { name: "Divide & Conquer", color: "#5b4de0", desc: "Split problem in half, solve each half, merge. Merge sort, quick sort basis.", questions: [
+      { name: "Generate All Subsets", diff: "medium", plat: "gfg", note: "Include/exclude" },
       { name: "Merge Sort", diff: "medium", plat: "gfg", note: "Implement from scratch" },
-      { name: "Quick Sort", diff: "medium", plat: "gfg", note: "Partition + recurse" },
       { name: "Count Inversions", diff: "medium", plat: "gfg", note: "Merge sort variant" },
-      { name: "Search in Rotated Array (recursive)", diff: "medium", plat: "lc", note: "D&C binary search" },
-      { name: "Majority Element", diff: "easy", plat: "lc", note: "Boyer-Moore + D&C" },
     ]},
   ],
   backtracking: [
-    { name: "Subsets & Combinations", color: "#0f9d8b", desc: "Generate all subsets. Include/exclude at each step. Sorted input + skip duplicates.", questions: [
-      { name: "Subsets I", diff: "medium", plat: "lc", note: "No duplicates, clean" },
+    { name: "Combinations & Grids", color: "#e03f39", desc: "Explore all paths, prune failures.", questions: [
       { name: "Subsets II (with duplicates)", diff: "medium", plat: "lc", note: "Sort + skip" },
       { name: "Combination Sum I", diff: "medium", plat: "lc", note: "Unlimited reuse" },
-      { name: "Combination Sum II", diff: "medium", plat: "lc", note: "One use per element" },
-      { name: "Combination Sum III", diff: "medium", plat: "lc", note: "Exactly k numbers" },
-      { name: "Letter Combinations of Phone", diff: "medium", plat: "lc", note: "String backtrack" },
-    ]},
-    { name: "Permutations", color: "#5b4de0", desc: "All orderings of elements. Visited array or swap-based approach.", questions: [
       { name: "Permutations I", diff: "medium", plat: "lc", note: "Visited array" },
-      { name: "Permutations II (duplicates)", diff: "medium", plat: "lc", note: "Sort + skip used" },
-      { name: "Next Permutation", diff: "medium", plat: "lc", note: "No recursion, clever" },
-      { name: "Permutation Sequence", diff: "hard", plat: "lc", note: "Math + factorial" },
-    ]},
-    { name: "Grid & Constraint Backtracking", color: "#e03f39", desc: "Classic problems where you place elements with constraints and backtrack on failure.", questions: [
       { name: "N-Queens", diff: "hard", plat: "lc", note: "Column + diagonal sets" },
-      { name: "N-Queens II (count)", diff: "hard", plat: "lc", note: "Same, just count" },
-      { name: "Sudoku Solver", diff: "hard", plat: "lc", note: "Row/col/box pruning" },
       { name: "Word Search", diff: "medium", plat: "lc", note: "DFS + visited" },
-      { name: "Palindrome Partitioning", diff: "medium", plat: "lc", note: "Backtrack + isPalin check" },
-      { name: "Rat in a Maze", diff: "medium", plat: "gfg", note: "Grid DFS + backtrack" },
     ]},
   ],
-
-  // PHASE 2 — Trees & Graphs
   binary_tree: [
-    { name: "Traversals", color: "#e03f39", desc: "6 traversals: inorder, preorder, postorder (recursive + iterative). Level order BFS. Foundation for all tree problems.", questions: [
-      { name: "Binary Tree Inorder Traversal", diff: "easy", plat: "lc", note: "Iterative with stack" },
+    { name: "Traversals & Views", color: "#e03f39", desc: "DFS and BFS implementations and variations.", questions: [
       { name: "Binary Tree Level Order Traversal", diff: "medium", plat: "lc", note: "BFS + queue" },
-      { name: "Zigzag Level Order", diff: "medium", plat: "lc", note: "Deque / flip flag" },
       { name: "Binary Tree Right Side View", diff: "medium", plat: "lc", note: "Last node at each level" },
       { name: "Vertical Order Traversal", diff: "hard", plat: "lc", note: "BFS + sort by col" },
-      { name: "Top View of Binary Tree", diff: "medium", plat: "gfg", note: "BFS + col map" },
-    ]},
-    { name: "Path & Diameter Problems", color: "#5b4de0", desc: "Max path, diameter, sum paths. Common interview questions on tree recursion.", questions: [
       { name: "Diameter of Binary Tree", diff: "easy", plat: "lc", note: "Max left+right height" },
       { name: "Binary Tree Maximum Path Sum", diff: "hard", plat: "lc", note: "Global max + local return" },
-      { name: "Path Sum I", diff: "easy", plat: "lc", note: "Root to leaf sum" },
-      { name: "Path Sum II (all paths)", diff: "medium", plat: "lc", note: "Backtrack + list" },
-      { name: "Sum Root to Leaf Numbers", diff: "medium", plat: "lc", note: "Carry number down" },
-      { name: "Count Good Nodes", diff: "medium", plat: "lc", note: "Pass max from root" },
-    ]},
-    { name: "LCA & Ancestors", color: "#0f9d8b", desc: "Lowest Common Ancestor — single most asked tree concept in interviews.", questions: [
       { name: "Lowest Common Ancestor of BT", diff: "medium", plat: "lc", note: "Classic recursive LCA" },
-      { name: "LCA of BST", diff: "medium", plat: "lc", note: "BST property version" },
-      { name: "Distance Between Two Nodes", diff: "medium", plat: "gfg", note: "LCA + path lengths" },
-      { name: "All Nodes Distance K", diff: "medium", plat: "lc", note: "Parent pointers + BFS" },
-    ]},
-    { name: "Construct & Transform", color: "#c49a00", desc: "Build trees from traversals, serialize/deserialize, flatten.", questions: [
-      { name: "Construct BT from Inorder+Preorder", diff: "medium", plat: "lc", note: "Root = preorder[0]" },
-      { name: "Construct BT from Inorder+Postorder", diff: "medium", plat: "lc", note: "Root = postorder[-1]" },
-      { name: "Serialize and Deserialize Binary Tree", diff: "hard", plat: "lc", note: "BFS or preorder" },
-      { name: "Flatten BT to Linked List", diff: "medium", plat: "lc", note: "Morris / reverse postorder" },
-      { name: "Symmetric Tree", diff: "easy", plat: "lc", note: "Mirror check recursive" },
     ]},
   ],
-  bst: [
-    { name: "BST Operations", color: "#e03f39", desc: "Core BST insert/delete/search. Kth smallest/largest using inorder.", questions: [
+  bst_heap_trie: [
+    { name: "BST & Heaps", color: "#5b4de0", desc: "Binary Search Trees, Priority Queues and Tries.", questions: [
       { name: "Validate Binary Search Tree", diff: "medium", plat: "lc", note: "Pass min/max bounds" },
       { name: "Kth Smallest Element in BST", diff: "medium", plat: "lc", note: "Inorder = sorted" },
-      { name: "Insert into BST", diff: "medium", plat: "lc", note: "Recursive insertion" },
-      { name: "Delete Node in BST", diff: "medium", plat: "lc", note: "3 cases: leaf, 1 child, 2" },
-      { name: "Floor and Ceil in BST", diff: "medium", plat: "gfg", note: "BST property traversal" },
-      { name: "Two Sum in BST", diff: "easy", plat: "lc", note: "Inorder + two pointer" },
-      { name: "Recover Binary Search Tree", diff: "medium", plat: "lc", note: "Inorder to find swapped" },
-    ]},
-  ],
-  heap: [
-    { name: "Top K Pattern", color: "#5b4de0", desc: "Min heap of size K to maintain top K elements. O(n log k) instead of O(n log n).", questions: [
       { name: "Kth Largest Element in Array", diff: "medium", plat: "lc", note: "Min heap size K" },
-      { name: "Top K Frequent Elements", diff: "medium", plat: "lc", note: "Heap + freq map" },
-      { name: "K Closest Points to Origin", diff: "medium", plat: "lc", note: "Max heap or sort" },
       { name: "Find Median from Data Stream", diff: "hard", plat: "lc", note: "Two heaps: max + min" },
-      { name: "Merge K Sorted Lists", diff: "hard", plat: "lc", note: "Min heap of heads" },
-      { name: "Kth Largest in a Stream", diff: "easy", plat: "lc", note: "Min heap size K" },
-    ]},
-  ],
-  trie: [
-    { name: "Trie Operations", color: "#0f9d8b", desc: "Insert/search/startsWith with TrieNode. Key for autocomplete, word problems.", questions: [
       { name: "Implement Trie (Prefix Tree)", diff: "medium", plat: "lc", note: "Build TrieNode from scratch" },
-      { name: "Search Suggestions System", diff: "medium", plat: "lc", note: "Trie + sort" },
-      { name: "Replace Words", diff: "medium", plat: "lc", note: "Root dictionary trie" },
-      { name: "Word Search II", diff: "hard", plat: "lc", note: "Trie + DFS on grid" },
-      { name: "Longest Common Prefix", diff: "easy", plat: "lc", note: "Trie or vertical scan" },
-      { name: "Maximum XOR of Two Numbers", diff: "medium", plat: "lc", note: "Binary trie" },
     ]},
   ],
   graphs: [
-    { name: "BFS & DFS Traversal", color: "#e03f39", desc: "Foundation. BFS for shortest path in unweighted graphs. DFS for exploration, cycle detection.", questions: [
+    { name: "Traversal & Shortest Path", color: "#0f9d8b", desc: "BFS, DFS, Dijkstra, Topo Sort, Union Find.", questions: [
       { name: "Number of Islands", diff: "medium", plat: "lc", note: "BFS/DFS flood fill" },
-      { name: "Max Area of Island", diff: "medium", plat: "lc", note: "DFS area counting" },
-      { name: "Clone Graph", diff: "medium", plat: "lc", note: "BFS + HashMap" },
-      { name: "Flood Fill", diff: "easy", plat: "lc", note: "DFS color replace" },
-      { name: "Surrounded Regions", diff: "medium", plat: "lc", note: "BFS from border" },
       { name: "Rotten Oranges", diff: "medium", plat: "lc", note: "Multi-source BFS" },
-      { name: "Pacific Atlantic Water Flow", diff: "medium", plat: "lc", note: "BFS from both borders" },
-    ]},
-    { name: "Shortest Path", color: "#5b4de0", desc: "Dijkstra for weighted graphs. BFS for unweighted. Bellman-Ford for negative edges.", questions: [
-      { name: "Network Delay Time (Dijkstra)", diff: "medium", plat: "lc", note: "Dijkstra with min heap" },
-      { name: "Cheapest Flights K Stops (Bellman-Ford)", diff: "medium", plat: "lc", note: "K-limited Bellman-Ford" },
-      { name: "Path With Minimum Effort", diff: "medium", plat: "lc", note: "Dijkstra on grid" },
-      { name: "Word Ladder", diff: "hard", plat: "lc", note: "BFS on word graph" },
-      { name: "Bus Routes", diff: "hard", plat: "lc", note: "BFS on route graph" },
-    ]},
-    { name: "Topological Sort", color: "#0f9d8b", desc: "Ordering of nodes with dependencies. Kahn's BFS or DFS postorder. Only for DAGs.", questions: [
       { name: "Course Schedule I", diff: "medium", plat: "lc", note: "Cycle detect in directed" },
-      { name: "Course Schedule II", diff: "medium", plat: "lc", note: "Return topo order" },
-      { name: "Alien Dictionary", diff: "hard", plat: "lc", note: "Build graph from words" },
-      { name: "Sequence Reconstruction", diff: "medium", plat: "lc", note: "Unique topo order check" },
-      { name: "Find Eventual Safe States", diff: "medium", plat: "lc", note: "Reverse topo" },
-    ]},
-    { name: "Union-Find (DSU)", color: "#c49a00", desc: "Disjoint Set Union for connected components, cycle detection, Kruskal's MST.", questions: [
+      { name: "Network Delay Time", diff: "medium", plat: "lc", note: "Dijkstra with min heap" },
       { name: "Number of Connected Components", diff: "medium", plat: "lc", note: "Basic DSU" },
-      { name: "Redundant Connection", diff: "medium", plat: "lc", note: "Cycle via DSU" },
-      { name: "Accounts Merge", diff: "medium", plat: "lc", note: "Union by email" },
-      { name: "Number of Operations to Make Network Connected", diff: "medium", plat: "lc", note: "Component count" },
-      { name: "Most Stones Removed", diff: "medium", plat: "lc", note: "Row/col DSU" },
-      { name: "Minimum Spanning Tree (Kruskal)", diff: "medium", plat: "gfg", note: "Sort edges + DSU" },
-    ]},
-  ],
-
-  // PHASE 3 — Sorting & Binary Search
-  sorting: [
-    { name: "Sorting Fundamentals", color: "#c49a00", desc: "Implement all 6 sorts. Know stability, time complexity, space complexity for each.", questions: [
-      { name: "Sort Colors (Dutch National Flag)", diff: "medium", plat: "lc", note: "3-way partition in-place" },
-      { name: "Sort List (Merge Sort)", diff: "medium", plat: "lc", note: "Merge sort on LL" },
-      { name: "Count Inversions (Merge Sort)", diff: "medium", plat: "gfg", note: "Merge + count" },
-      { name: "Wiggle Sort II", diff: "medium", plat: "lc", note: "Partial sort trick" },
-      { name: "Largest Number", diff: "medium", plat: "lc", note: "Custom comparator" },
-    ]},
-    { name: "Interval Sorting", color: "#5b4de0", desc: "Sort by start/end times then merge or count. Classic greedy pattern.", questions: [
-      { name: "Merge Intervals", diff: "medium", plat: "lc", note: "Sort start, merge" },
-      { name: "Non-overlapping Intervals", diff: "medium", plat: "lc", note: "Sort end, greedy" },
-      { name: "Meeting Rooms I", diff: "easy", plat: "lc", note: "Check any overlap" },
-      { name: "Meeting Rooms II", diff: "medium", plat: "lc", note: "Sort + min heap" },
-      { name: "Insert Interval", diff: "medium", plat: "lc", note: "Find merge window" },
     ]},
   ],
   binary_search: [
-    { name: "Classic Binary Search", color: "#c49a00", desc: "lo/hi/mid template. Off-by-one is the enemy. Know leftmost/rightmost variants.", questions: [
-      { name: "Binary Search", diff: "easy", plat: "lc", note: "lo/hi/mid template" },
-      { name: "First and Last Position in Sorted Array", diff: "medium", plat: "lc", note: "Two BS calls" },
-      { name: "Search in Rotated Sorted Array I", diff: "medium", plat: "lc", note: "Which half is sorted?" },
-      { name: "Search in Rotated Sorted Array II", diff: "medium", plat: "lc", note: "Duplicates edge case" },
+    { name: "BS on Answer", color: "#c49a00", desc: "Search space is monotonic. Very high frequency.", questions: [
+      { name: "Search in Rotated Sorted Array", diff: "medium", plat: "lc", note: "Which half is sorted?" },
       { name: "Find Minimum in Rotated Array", diff: "medium", plat: "lc", note: "Pivot finding" },
-      { name: "Find Peak Element", diff: "medium", plat: "lc", note: "Local max" },
-      { name: "Search a 2D Matrix I", diff: "medium", plat: "lc", note: "Flatten to 1D" },
-      { name: "Search a 2D Matrix II", diff: "medium", plat: "lc", note: "Start top-right" },
-    ]},
-    { name: "Binary Search on Answer", color: "#8b35d6", desc: "Answer space is monotonic — if X is possible, X-1 is too. BS on the answer itself.", questions: [
       { name: "Koko Eating Bananas", diff: "medium", plat: "lc", note: "BS on speed k" },
-      { name: "Capacity to Ship Packages in D Days", diff: "medium", plat: "lc", note: "BS on capacity" },
-      { name: "Minimum Days to Make M Bouquets", diff: "medium", plat: "lc", note: "BS on days" },
-      { name: "Aggressive Cows (SPOJ)", diff: "medium", plat: "gfg", note: "BS + greedy validity" },
-      { name: "Painter's Partition", diff: "hard", plat: "gfg", note: "BS on max time" },
-      { name: "Allocate Minimum Pages", diff: "hard", plat: "gfg", note: "BS on pages" },
-      { name: "Median of Two Sorted Arrays", diff: "hard", plat: "lc", note: "BS on partition" },
+      { name: "Aggressive Cows", diff: "medium", plat: "gfg", note: "BS + greedy validity" },
       { name: "Split Array Largest Sum", diff: "hard", plat: "lc", note: "BS on largest sum" },
     ]},
   ],
-
-  // PHASE 4 — DP
-  dp_1d: [
-    { name: "1D DP Patterns", color: "#8b35d6", desc: "dp[i] depends on dp[i-1] or dp[i-2]. Memoization → tabulation → space optimize.", questions: [
+  dp: [
+    { name: "Knapsack & Subsequences", color: "#8b35d6", desc: "1D DP, 0/1 Knapsack, LCS, LIS.", questions: [
       { name: "Climbing Stairs", diff: "easy", plat: "lc", note: "dp[i] = dp[i-1]+dp[i-2]" },
-      { name: "House Robber I", diff: "medium", plat: "lc", note: "Max without adjacent" },
-      { name: "House Robber II (circular)", diff: "medium", plat: "lc", note: "Two passes" },
-      { name: "Jump Game I", diff: "medium", plat: "lc", note: "Greedy or DP" },
-      { name: "Jump Game II", diff: "medium", plat: "lc", note: "Min jumps — greedy" },
-      { name: "Decode Ways", diff: "medium", plat: "lc", note: "dp[i] with 1+2 digit" },
-      { name: "Coin Change I (min coins)", diff: "medium", plat: "lc", note: "dp[amount] = min" },
-      { name: "Coin Change II (ways)", diff: "medium", plat: "lc", note: "Count ways" },
-    ]},
-  ],
-  dp_knapsack: [
-    { name: "0/1 Knapsack", color: "#8b35d6", desc: "Each item used at most once. dp[i][w] = max value with first i items and weight w.", questions: [
-      { name: "0/1 Knapsack", diff: "medium", plat: "gfg", note: "Classic, implement" },
-      { name: "Subset Sum", diff: "medium", plat: "gfg", note: "Boolean dp[i][sum]" },
-      { name: "Partition Equal Subset Sum", diff: "medium", plat: "lc", note: "Subset sum = total/2" },
-      { name: "Last Stone Weight II", diff: "medium", plat: "lc", note: "Partition to min diff" },
-      { name: "Target Sum", diff: "medium", plat: "lc", note: "Count ways to reach target" },
-      { name: "Count of Subset Sum", diff: "medium", plat: "gfg", note: "Count boolean subsets" },
-    ]},
-    { name: "Unbounded Knapsack", color: "#5b4de0", desc: "Item can be used multiple times. dp goes left to right (not right to left).", questions: [
-      { name: "Unbounded Knapsack", diff: "medium", plat: "gfg", note: "Unlimited reuse" },
-      { name: "Rod Cutting", diff: "medium", plat: "gfg", note: "Maximize value" },
-      { name: "Coin Change (min coins)", diff: "medium", plat: "lc", note: "Unbounded version" },
-      { name: "Perfect Squares", diff: "medium", plat: "lc", note: "Min perfect sq count" },
-      { name: "Integer Break", diff: "medium", plat: "lc", note: "Max product split" },
-    ]},
-  ],
-  dp_strings: [
-    { name: "LCS & Variants", color: "#8b35d6", desc: "Longest Common Subsequence is the base. Most string DP derives from it.", questions: [
+      { name: "House Robber", diff: "medium", plat: "lc", note: "Max without adjacent" },
+      { name: "Coin Change", diff: "medium", plat: "lc", note: "Unbounded knapsack" },
+      { name: "Partition Equal Subset Sum", diff: "medium", plat: "lc", note: "0/1 Knapsack" },
       { name: "Longest Common Subsequence", diff: "medium", plat: "lc", note: "Build dp[m][n] table" },
-      { name: "Longest Common Substring", diff: "medium", plat: "gfg", note: "Contiguous version" },
-      { name: "Shortest Common Supersequence", diff: "hard", plat: "lc", note: "LCS + reconstruct" },
-      { name: "Delete Operations for Two Strings", diff: "medium", plat: "lc", note: "m+n - 2*LCS" },
-      { name: "Edit Distance", diff: "hard", plat: "lc", note: "Insert/delete/replace" },
-      { name: "Wildcard Matching", diff: "hard", plat: "lc", note: "? and * patterns" },
-      { name: "Regular Expression Matching", diff: "hard", plat: "lc", note: ". and * patterns" },
-    ]},
-    { name: "LIS & Subsequence DP", color: "#5b4de0", desc: "Longest Increasing Subsequence — O(n²) DP and O(n log n) patience sort.", questions: [
       { name: "Longest Increasing Subsequence", diff: "medium", plat: "lc", note: "O(n²) then O(n log n)" },
-      { name: "Russian Doll Envelopes", diff: "hard", plat: "lc", note: "2D LIS" },
-      { name: "Number of LIS", diff: "medium", plat: "lc", note: "Count all LIS" },
-      { name: "Longest Bitonic Subsequence", diff: "medium", plat: "gfg", note: "LIS + LDS both" },
-    ]},
-    { name: "Palindrome DP", color: "#e03f39", desc: "Palindromic subsequence, minimum cuts, expansion from center.", questions: [
-      { name: "Longest Palindromic Subsequence", diff: "medium", plat: "lc", note: "LCS(s, reverse(s))" },
-      { name: "Minimum Insertions for Palindrome", diff: "hard", plat: "lc", note: "n - LPS" },
-      { name: "Palindromic Substrings (count)", diff: "medium", plat: "lc", note: "Expand from center" },
-      { name: "Longest Palindromic Substring", diff: "medium", plat: "lc", note: "Expand or dp[i][j]" },
-      { name: "Palindrome Partitioning II", diff: "hard", plat: "lc", note: "Min cuts DP" },
     ]},
   ],
-  dp_advanced: [
-    { name: "Partition DP", color: "#8b35d6", desc: "Split array at every position, find optimal split. dp[i][j] range DP.", questions: [
-      { name: "Matrix Chain Multiplication", diff: "hard", plat: "gfg", note: "Classic interval DP" },
-      { name: "Burst Balloons", diff: "hard", plat: "lc", note: "Insert boundary coins" },
-      { name: "Strange Printer", diff: "hard", plat: "lc", note: "Range DP" },
-      { name: "Minimum Cost to Cut a Stick", diff: "hard", plat: "lc", note: "Interval DP" },
-    ]},
-    { name: "DP on Trees", color: "#5b4de0", desc: "Post-order DFS where each node returns computed value to parent.", questions: [
-      { name: "Diameter of Binary Tree", diff: "easy", plat: "lc", note: "Max left+right depth" },
-      { name: "Binary Tree Maximum Path Sum", diff: "hard", plat: "lc", note: "Global var + local return" },
-      { name: "House Robber III (on tree)", diff: "medium", plat: "lc", note: "Rob or not rob root" },
-      { name: "Longest Path with Same Values", diff: "medium", plat: "lc", note: "DFS returning lengths" },
-    ]},
-  ],
-
-  // PHASE 5 — Mocks
   mock_prep: [
-    { name: "Mixed Company Questions", color: "#d95f1a", desc: "Company tagged questions from Amazon, Flipkart, Swiggy, CRED, Paytm. All patterns combined.", questions: [
+    { name: "Mixed Problem Solving", color: "#d95f1a", desc: "Randomized timed practice for real interview feel.", questions: [
       { name: "LRU Cache", diff: "medium", plat: "lc", note: "HashMap + Doubly LL" },
-      { name: "Design HashMap", diff: "easy", plat: "lc", note: "Array + chaining" },
       { name: "Meeting Scheduler", diff: "medium", plat: "lc", note: "Sort + sweep" },
-      { name: "Minimum Window Substring", diff: "hard", plat: "lc", note: "Sliding window" },
-      { name: "Trapping Rain Water", diff: "hard", plat: "lc", note: "Stack / two pointer" },
-      { name: "Word Break I & II", diff: "medium", plat: "lc", note: "DP + backtrack" },
+      { name: "Word Break", diff: "medium", plat: "lc", note: "DP + backtrack" },
       { name: "Serialize/Deserialize BT", diff: "hard", plat: "lc", note: "BFS / preorder" },
     ]},
   ],
+
+  // === SYSTEM DESIGN PATTERNS (Phases 6-9) ===
+  sd_networking_db: [
+    { name: "Networking Fundamentals", color: "#0e7490", desc: "Protocols that power the web and how data moves.", questions: [
+      { name: "HTTP/HTTPS & TLS Handshake", diff: "easy", plat: "yt", note: "Understand the request lifecycle" },
+      { name: "TCP vs UDP", diff: "easy", plat: "read", note: "Connection-oriented vs Connectionless" },
+      { name: "DNS Resolution Process", diff: "medium", plat: "read", note: "How a URL becomes an IP" },
+      { name: "WebSockets vs SSE vs Polling", diff: "medium", plat: "yt", note: "Real-time comms (Scale your Socket.io knowledge)" },
+    ]},
+    { name: "Database Deep Dive", color: "#0e7490", desc: "SQL vs NoSQL, Indexing, and Scaling DBs.", questions: [
+      { name: "ACID vs BASE & CAP Theorem", diff: "medium", plat: "read", note: "When to choose MongoDB over PostgreSQL" },
+      { name: "Database Indexing (B-Trees)", diff: "medium", plat: "yt", note: "How indexes speed up queries internally" },
+      { name: "Sharding Strategies", diff: "hard", plat: "yt", note: "Horizontal partitioning (Hash, Range, Directory)" },
+      { name: "Replication (Master-Slave)", diff: "medium", plat: "read", note: "Handling read-heavy systems" },
+    ]},
+  ],
+  sd_caching_mq: [
+    { name: "Caching Strategies", color: "#0e7490", desc: "Reducing latency and DB load.", questions: [
+      { name: "Cache Eviction (LRU, LFU)", diff: "easy", plat: "read", note: "How memory is freed" },
+      { name: "Cache Writing Policies", diff: "medium", plat: "yt", note: "Write-through, Write-back, Cache-aside" },
+      { name: "Redis vs Memcached", diff: "easy", plat: "read", note: "Data structures in memory" },
+      { name: "CDN Architecture", diff: "medium", plat: "read", note: "Edge caching for static assets" },
+    ]},
+    { name: "Message Queues & Load Balancing", color: "#0e7490", desc: "Decoupling systems and distributing traffic.", questions: [
+      { name: "Kafka vs RabbitMQ", diff: "medium", plat: "yt", note: "Event streaming vs Task queues" },
+      { name: "L4 vs L7 Load Balancing", diff: "medium", plat: "read", note: "Nginx reverse proxy concepts" },
+      { name: "Consistent Hashing", diff: "hard", plat: "yt", note: "Crucial for distributed caching" },
+      { name: "Rate Limiting Algorithms", diff: "medium", plat: "yt", note: "Token bucket, Leaky bucket (Express middleware)" },
+    ]},
+  ],
+  hld_standard: [
+    { name: "Tier 1 HLD Cases", color: "#1d4ed8", desc: "Must-know foundational System Design questions.", questions: [
+      { name: "Design a URL Shortener (Bitly)", diff: "medium", plat: "yt", note: "Base62 encoding, read-heavy DB design" },
+      { name: "Design a Rate Limiter", diff: "medium", plat: "read", note: "Redis sliding window implementation" },
+      { name: "Design a Key-Value Store", diff: "hard", plat: "book", note: "Consistent hashing, replication, CAP" },
+      { name: "Design a Notification System", diff: "medium", plat: "yt", note: "Message queues, third-party APIs" },
+    ]},
+  ],
+  hld_advanced: [
+    { name: "Tier 2 HLD Cases", color: "#1d4ed8", desc: "High frequency questions involving complex data flows.", questions: [
+      { name: "Design WhatsApp / Chat System", diff: "hard", plat: "yt", note: "WebSockets, delivery guarantees, fanout" },
+      { name: "Design Instagram / News Feed", diff: "hard", plat: "book", note: "Push vs Pull fanout, ranking" },
+      { name: "Design YouTube / Video Streaming", diff: "hard", plat: "yt", note: "Chunking, CDN, adaptive bitrate" },
+      { name: "Design Uber / Ride Sharing", diff: "hard", plat: "yt", note: "Geospatial indexing (Quadtrees)" },
+    ]},
+  ],
+  lld_oops: [
+    { name: "OOP & SOLID", color: "#be185d", desc: "Core principles of clean, maintainable code.", questions: [
+      { name: "4 Pillars of OOP", diff: "easy", plat: "read", note: "Encapsulation, Abstraction, Inheritance, Poly" },
+      { name: "SOLID Principles", diff: "medium", plat: "yt", note: "SRP, OCP, LSP, ISP, DIP" },
+      { name: "DRY & KISS Principles", diff: "easy", plat: "read", note: "Don't Repeat Yourself, Keep It Simple" },
+    ]},
+    { name: "Design Patterns", color: "#be185d", desc: "Standard solutions to common software problems.", questions: [
+      { name: "Singleton & Factory", diff: "medium", plat: "read", note: "Creational patterns" },
+      { name: "Builder Pattern", diff: "medium", plat: "yt", note: "Very similar to Prisma query builder style" },
+      { name: "Observer Pattern", diff: "medium", plat: "yt", note: "Pub/Sub, Event emitters in Node.js" },
+      { name: "Strategy & Chain of Responsibility", diff: "hard", plat: "book", note: "Express middleware uses Chain of Responsibility" },
+    ]},
+  ],
+  lld_cases: [
+    { name: "LLD Problem Solving", color: "#be185d", desc: "Class diagrams and object modeling.", questions: [
+      { name: "Design a Parking Lot", diff: "medium", plat: "yt", note: "Classes: Spot, Ticket, Vehicle, Floor" },
+      { name: "Design BookMyShow", diff: "hard", plat: "yt", note: "Handling concurrency and seat locking" },
+      { name: "Design Splitwise", diff: "hard", plat: "read", note: "Expense settlement algorithm" },
+      { name: "Design an Elevator System", diff: "hard", plat: "yt", note: "State pattern and scheduling" },
+    ]},
+  ],
+  sd_mock_prep: [
+    { name: "Execution & Frameworks", color: "#047857", desc: "Putting it all together under 45 minutes.", questions: [
+      { name: "Capacity Estimation Math", diff: "medium", plat: "read", note: "DAU, QPS, Storage per year formulas" },
+      { name: "45-Minute SD Framework", diff: "easy", plat: "read", note: "Reqs -> Capacity -> API -> Data Model -> HLD" },
+      { name: "Mock: E-commerce Checkout", diff: "hard", plat: "yt", note: "Inventory reservation, distributed transactions" },
+      { name: "Mock: Search Autocomplete", diff: "hard", plat: "yt", note: "Trie + top-K with Redis" },
+    ]},
+  ]
 };
 
 // ─── PHASE DATA ────────────────────────────────────────────────────────────
+const PBAR_COLORS = ['#5b4de0','#0f9d8b','#e03f39','#c49a00','#8b35d6','#d95f1a','#0e7490','#1d4ed8','#be185d','#047857'];
+
 const PHASES = [
+  // DSA Phases (0 - 5)
   {
     title: "Foundations — Complexity + Linear DS",
-    duration: "Mid June → End July (6–7 weeks)",
+    duration: "Week 1 → Week 7",
     badge: "Foundation",
     patternKeys: ["arrays","linked_list","stack_queue","hashing"],
     patternLabels: { arrays:"Arrays", linked_list:"Linked List", stack_queue:"Stack & Queue", hashing:"Hashing" },
-    topics: ["Time & Space Complexity — Big O, Omega, Theta","Best/Worst/Average case analysis","Arrays — CRUD, sliding window, two pointer","Strings — manipulation, pattern matching intro","Linked List — singly, doubly, circular; all ops","Stack & Queue — arrays + LL, monotonic stack","Hashing — HashMap, HashSet, collision basics"],
-    resources: [{t:"yt",l:"TakeUForward (Striver)"},{t:"yt",l:"NeetCode 150 List"},{t:"lc",l:"LC Arrays & Hashing"},{t:"gfg",l:"GFG DSA Self Paced"},{t:"book",l:"CLRS Ch. 1–3"}],
-    practice: [{t:"lc",l:"Striver SDE Sheet — Arrays"},{t:"gfg",l:"GFG Must-Do 180"}],
-    goal: "🎯 Goal: 60–70 Easy/Medium problems. Dry run every approach before coding.",
-    color: "var(--accent)",
+    topics: ["Time & Space Complexity","Arrays — CRUD, sliding window, two pointer","Linked List — singly, doubly, circular","Stack & Queue — monotonic stack","Hashing — HashMap, HashSet"],
+    resources: [{t:"yt",l:"TakeUForward (Striver)"},{t:"lc",l:"LC Arrays & Hashing"}],
+    practice: [{t:"lc",l:"Striver SDE Sheet"},{t:"gfg",l:"GFG Must-Do 180"}],
+    goal: "🎯 Goal: 60–70 Easy/Medium problems. Dry run every approach.",
+    color: "#5b4de0",
     weeks: [
-      { w:"Week 1", topic:"Big O + Complexity Analysis", probs:5, days:[
-        {d:"Mon",t:"Study Big O: what it means, how to derive it. Watch Striver intro video."},
-        {d:"Tue",t:"Space vs time complexity. Analyze simple loops, nested loops on paper."},
-        {d:"Wed",t:"Best/worst/avg case. Analyze recursive functions. GFG complexity MCQs."},
-        {d:"Thu",t:"Revise complexity notes. Solve 2 complexity estimation questions on GFG."},
-        {d:"Fri",t:"Start Arrays — CRUD ops, traverse, insert, delete. 3 easy LC problems."},
-        {d:"Sat",t:"Revise complexity notes. Redo any LC problem you struggled with."},
-        {d:"Sun",t:"Rest or LC Weekly Contest.",rest:true}
-      ]},
-      { w:"Week 2", topic:"Arrays — Two Pointer + Sliding Window", probs:12, days:[
-        {d:"Mon",t:"Two pointer concept — sorted pair sum, reverse array. 2 easy LC."},
-        {d:"Tue",t:"Two pointer — container with most water, 3Sum. 1–2 LC medium."},
-        {d:"Wed",t:"Sliding window intro — max sum subarray of size k. Fixed window."},
-        {d:"Thu",t:"Variable sliding window — longest substring without repeat."},
-        {d:"Fri",t:"Mix: 1 two-pointer + 1 sliding window medium. Timed 45 min each."},
-        {d:"Sat",t:"Revise & re-solve Week 1–2 problems you didn't solve cleanly."},
-        {d:"Sun",t:"Rest or LC Weekly Contest.",rest:true}
-      ]},
-      { w:"Week 3", topic:"Strings + HashMap Intro", probs:20, days:[
-        {d:"Mon",t:"String basics — reverse, palindrome check, anagram. 3 easy LC."},
-        {d:"Tue",t:"HashMap intro — frequency count, two sum, first unique character."},
-        {d:"Wed",t:"HashSet — contains duplicate, intersection of arrays. 2–3 easy/medium."},
-        {d:"Thu",t:"Group anagrams, longest consecutive sequence. 2 mediums."},
-        {d:"Fri",t:"Timed: 1 medium string + 1 medium hashmap. No peek < 30 min."},
-        {d:"Sat",t:"Weekly revision — pick 3 problems from Week 2–3 you got wrong."},
-        {d:"Sun",t:"Rest or Contest.",rest:true}
-      ]},
-      { w:"Week 4", topic:"Linked List — Singly + Doubly", probs:30, days:[
-        {d:"Mon",t:"LL node structure, insertion (head/tail/mid), deletion. Implement from scratch."},
-        {d:"Tue",t:"Traversal, reverse a linked list (iterative + recursive). 2 LC easy."},
-        {d:"Wed",t:"Detect cycle — Floyd's algorithm. Find middle of LL. 2 easy/medium."},
-        {d:"Thu",t:"Merge two sorted lists, remove Nth from end. 2 mediums."},
-        {d:"Fri",t:"Doubly LL implementation. LRU Cache concept intro."},
-        {d:"Sat",t:"Revise all LL problems. Re-solve reverse LL + detect cycle from memory."},
-        {d:"Sun",t:"Rest or Contest.",rest:true}
-      ]},
-      { w:"Week 5", topic:"Stack + Queue + Monotonic Stack", probs:45, days:[
-        {d:"Mon",t:"Stack using array + LL. Valid parentheses, min stack. 2 easy LC."},
-        {d:"Tue",t:"Queue using array + LL. Circular queue. Implement stack using queues."},
-        {d:"Wed",t:"Monotonic stack — next greater element I & II. 2 mediums."},
-        {d:"Thu",t:"Daily temperatures, largest rectangle in histogram. 2 mediums."},
-        {d:"Fri",t:"Timed mock: pick 2 medium stack problems, 45 min each."},
-        {d:"Sat",t:"Weekly revision — stack + queue all key patterns from notes."},
-        {d:"Sun",t:"Rest or Contest.",rest:true}
-      ]},
-      { w:"Week 6–7", topic:"Hashing Deep Dive + Phase 1 Consolidation", probs:65, days:[
-        {d:"Mon",t:"HashMap internals — collision, chaining, load factor (theory only)."},
-        {d:"Tue",t:"Subarray sum equals K, count distinct elements in window. 2 mediums."},
-        {d:"Wed",t:"Top K frequent elements, sort characters by frequency. 2 mediums."},
-        {d:"Thu",t:"Phase 1 revision — go through all notes, identify weakest topic."},
-        {d:"Fri",t:"Weak topic re-practice — solve 3 problems on whichever felt hardest."},
-        {d:"Sat",t:"Full Phase 1 mock: 3 problems in 90 min (1 easy + 2 medium)."},
-        {d:"Sun",t:"Rest. Plan Phase 2 — set up Striver recursion playlist.",rest:true}
-      ]}
+      { w:"Week 1", topic:"Complexity + Arrays Intro", probs:10, days:[{d:"Mon",t:"Big O Analysis"},{d:"Tue",t:"Two Pointer Concept"},{d:"Wed",t:"Two Sum, Three Sum"},{d:"Thu",t:"Sliding Window Intro"},{d:"Fri",t:"Prefix Sum basics"},{d:"Sat",t:"Revision"},{d:"Sun",t:"Rest",rest:true}] },
+      { w:"Week 2", topic:"Sliding Window & Hashing", probs:25, days:[{d:"Mon",t:"Variable Sliding Window"},{d:"Tue",t:"HashMap Freq Counting"},{d:"Wed",t:"HashSet detection"},{d:"Thu",t:"Group Anagrams"},{d:"Fri",t:"Longest Substring"},{d:"Sat",t:"Revision"},{d:"Sun",t:"Contest",rest:true}] },
+      { w:"Week 3", topic:"Linked List Basics", probs:40, days:[{d:"Mon",t:"LL Insertion/Deletion"},{d:"Tue",t:"Reverse LL Iterative"},{d:"Wed",t:"Fast/Slow Pointers"},{d:"Thu",t:"Merge Sorted Lists"},{d:"Fri",t:"Cycle Detection"},{d:"Sat",t:"Revision"},{d:"Sun",t:"Rest",rest:true}] },
+      { w:"Week 4", topic:"Stack & Queue", probs:55, days:[{d:"Mon",t:"Stack Implementations"},{d:"Tue",t:"Valid Parentheses"},{d:"Wed",t:"Monotonic Stack Intro"},{d:"Thu",t:"Next Greater Element"},{d:"Fri",t:"Queue/Deque basics"},{d:"Sat",t:"Revision"},{d:"Sun",t:"Rest",rest:true}] }
     ]
   },
   {
     title: "Recursion + Backtracking",
-    duration: "August → Mid September (6 weeks)",
+    duration: "Week 8 → Week 11",
     badge: "Core Skill",
     patternKeys: ["recursion_basics","backtracking"],
     patternLabels: { recursion_basics:"Recursion", backtracking:"Backtracking" },
-    topics: ["Recursion fundamentals — call stack, base cases","Recurrence relations & solving them","Divide & Conquer pattern","Backtracking — subsets, permutations, combinations","N-Queens, Sudoku Solver, Word Search","Pruning techniques"],
-    resources: [{t:"yt",l:"Striver Recursion Playlist"},{t:"yt",l:"Aditya Verma Recursion Series"},{t:"lc",l:"LC Backtracking Tag"},{t:"gfg",l:"GFG Recursion Problems"}],
-    practice: [{t:"lc",l:"Subsets I & II"},{t:"lc",l:"Permutations I & II"},{t:"lc",l:"Combination Sum"},{t:"lc",l:"Word Search"}],
-    goal: "🎯 Goal: 40–50 problems. Draw recursion tree for EVERY problem manually first.",
-    color: "var(--accent3)",
+    topics: ["Call stack visualization","Divide & Conquer","Subsets & Combinations","Grid Backtracking (N-Queens, Word Search)"],
+    resources: [{t:"yt",l:"Striver Recursion Playlist"},{t:"lc",l:"LC Backtracking Tag"}],
+    practice: [{t:"lc",l:"Subsets I & II"},{t:"lc",l:"Permutations"}],
+    goal: "🎯 Goal: Draw recursion tree for EVERY problem manually.",
+    color: "#0f9d8b",
     weeks: [
-      { w:"Week 7–8", topic:"Recursion Fundamentals", probs:8, days:[
-        {d:"Mon",t:"Recursion mental model — call stack, base case, trust the recursion."},
-        {d:"Tue",t:"Power(x,n), sum of digits, count zeros. Draw recursion tree for each."},
-        {d:"Wed",t:"Reverse a string recursively, check palindrome recursively."},
-        {d:"Thu",t:"Recurrence relations — T(n)=T(n-1)+O(1). Master theorem intro."},
-        {d:"Fri",t:"Merge sort from scratch (D&C). Trace through a small array on paper."},
-        {d:"Sat",t:"Revise — redraw recursion trees for 3 problems from this week."},
-        {d:"Sun",t:"Rest or Contest.",rest:true}
-      ]},
-      { w:"Week 9", topic:"Backtracking — Subsets & Permutations", probs:18, days:[
-        {d:"Mon",t:"Subsets I — generate all subsets. Understand include/exclude pattern fully."},
-        {d:"Tue",t:"Subsets II — with duplicates. Sorting + skip logic."},
-        {d:"Wed",t:"Permutations I — all permutations. Visited array approach."},
-        {d:"Thu",t:"Permutations II — with duplicates. Swap-based approach."},
-        {d:"Fri",t:"Timed: Subsets II + Permutations II from memory, 45 min each."},
-        {d:"Sat",t:"Revision: redraw decision trees for Subsets + Permutations."},
-        {d:"Sun",t:"Rest or Contest.",rest:true}
-      ]},
-      { w:"Week 10", topic:"Combination Sum Variants", probs:28, days:[
-        {d:"Mon",t:"Combination Sum I — unlimited picks. Start index iteration."},
-        {d:"Tue",t:"Combination Sum II — one pick per element, with duplicates."},
-        {d:"Wed",t:"Combination Sum III — exactly k numbers summing to n."},
-        {d:"Thu",t:"Letter combinations of phone number."},
-        {d:"Fri",t:"Timed mock: pick any 2 from Combo Sum variants."},
-        {d:"Sat",t:"Revision — all backtracking patterns summary in notes."},
-        {d:"Sun",t:"Rest.",rest:true}
-      ]},
-      { w:"Week 11–12", topic:"Classic Backtracking — N-Queens, Sudoku, Word Search", probs:45, days:[
-        {d:"Mon",t:"N-Queens problem — brute to optimized with column + diagonal sets."},
-        {d:"Tue",t:"N-Queens II — count solutions. Trace through 4-Queens manually."},
-        {d:"Wed",t:"Word Search — grid DFS + visited array. LC medium."},
-        {d:"Thu",t:"Sudoku Solver — row/col/box constraint pruning."},
-        {d:"Fri",t:"Palindrome partitioning — backtrack + DP preview."},
-        {d:"Sat",t:"Phase 2 mock — 2 backtracking problems in 90 min."},
-        {d:"Sun",t:"Rest. Reflect — which backtracking problems still feel hard?",rest:true}
-      ]}
+      { w:"Week 5", topic:"Recursion Basics", probs:15, days:[{d:"Mon",t:"Call stack & Base cases"},{d:"Tue",t:"Power(x,n), String reverse"},{d:"Wed",t:"Merge Sort"},{d:"Thu",t:"Quick Sort"},{d:"Fri",t:"Recursion Tree Practice"},{d:"Sat",t:"Revision"},{d:"Sun",t:"Rest",rest:true}] },
+      { w:"Week 6", topic:"Backtracking Intro", probs:30, days:[{d:"Mon",t:"Subsets I"},{d:"Tue",t:"Subsets II (duplicates)"},{d:"Wed",t:"Permutations I"},{d:"Thu",t:"Combination Sum"},{d:"Fri",t:"Letter Combinations"},{d:"Sat",t:"Revision"},{d:"Sun",t:"Rest",rest:true}] },
+      { w:"Week 7", topic:"Grid Backtracking", probs:45, days:[{d:"Mon",t:"N-Queens Problem"},{d:"Tue",t:"Sudoku Solver"},{d:"Wed",t:"Word Search"},{d:"Thu",t:"Rat in a Maze"},{d:"Fri",t:"Palindrome Partitioning"},{d:"Sat",t:"Mock Practice"},{d:"Sun",t:"Contest",rest:true}] }
     ]
   },
   {
-    title: "Non-Linear DS — Trees, Graphs, Heaps",
-    duration: "Mid Sep → End November (10 weeks)",
+    title: "Trees, Graphs, Heaps",
+    duration: "Week 12 → Week 18",
     badge: "Heavy Phase",
-    patternKeys: ["binary_tree","bst","heap","trie","graphs"],
-    patternLabels: { binary_tree:"Binary Tree", bst:"BST", heap:"Heap", trie:"Trie", graphs:"Graphs" },
-    topics: ["Binary Tree — all 6 traversals, views, diameter, LCA","BST — insert/delete/search, validation, kth smallest","Heap/Priority Queue — min/max, heapify, top-K","Trie — insert/search/startsWith","Graphs — BFS, DFS, adjacency list/matrix","Shortest Path — Dijkstra, Bellman-Ford, Floyd-Warshall","Spanning Tree — Kruskal, Prim's","Topological Sort — BFS (Kahn's) + DFS","Cycle detection (directed + undirected)","Disjoint Set Union (Union-Find)"],
-    resources: [{t:"yt",l:"Striver Tree + Graph Series"},{t:"yt",l:"William Fiset Graph Theory"},{t:"lc",l:"NeetCode Graphs Roadmap"},{t:"gfg",l:"GFG Graph Section"},{t:"book",l:"Striver A2Z Sheet"}],
-    practice: [{t:"lc",l:"Number of Islands"},{t:"lc",l:"Clone Graph"},{t:"lc",l:"Course Schedule I & II"},{t:"lc",l:"Rotten Oranges"}],
-    goal: "🎯 Goal: 100–120 problems. Trees first, then graphs. Don't rush graphs.",
-    color: "var(--accent2)",
+    patternKeys: ["binary_tree","bst_heap_trie","graphs"],
+    patternLabels: { binary_tree:"Binary Tree", bst_heap_trie:"BST, Heap, Trie", graphs:"Graphs" },
+    topics: ["Tree Traversals & LCA","BST Properties","Heaps (Top-K pattern)","Graph BFS/DFS","Shortest Path (Dijkstra)","Topological Sort"],
+    resources: [{t:"yt",l:"Striver Graph Series"},{t:"lc",l:"NeetCode Graphs"}],
+    practice: [{t:"lc",l:"Number of Islands"},{t:"lc",l:"Clone Graph"}],
+    goal: "🎯 Goal: 100+ problems. Don't rush Graphs.",
+    color: "#e03f39",
     weeks: [
-      { w:"Week 13–14", topic:"Binary Tree — Traversals + Views", probs:15, days:[
-        {d:"Mon",t:"BT structure, inorder/preorder/postorder (recursive). Code all 3 from scratch."},
-        {d:"Tue",t:"Iterative traversals using stack — inorder + preorder."},
-        {d:"Wed",t:"Level order BFS — by level, zigzag, right view, left view."},
-        {d:"Thu",t:"Height, diameter of binary tree. Max path sum."},
-        {d:"Fri",t:"Top view, bottom view, vertical order traversal. 3 mediums."},
-        {d:"Sat",t:"Revise all traversals — code from memory without IDE."},
-        {d:"Sun",t:"Rest or Contest.",rest:true}
-      ]},
-      { w:"Week 15", topic:"Binary Tree — LCA, Paths, Construction", probs:28, days:[
-        {d:"Mon",t:"Lowest Common Ancestor (LCA) — recursive approach."},
-        {d:"Tue",t:"Root to node path, all paths from root to leaf."},
-        {d:"Wed",t:"Construct BT from inorder + preorder. From inorder + postorder."},
-        {d:"Thu",t:"Symmetric tree, same tree, flatten BT to linked list."},
-        {d:"Fri",t:"Timed: LCA + construct BT problems (45 min each)."},
-        {d:"Sat",t:"Revision — BT all key patterns. Write patterns cheatsheet."},
-        {d:"Sun",t:"Rest.",rest:true}
-      ]},
-      { w:"Week 16", topic:"BST — All Operations", probs:40, days:[
-        {d:"Mon",t:"BST insert, delete, search. Implement from scratch."},
-        {d:"Tue",t:"Validate BST (inorder must be sorted). Kth smallest/largest."},
-        {d:"Wed",t:"BST to greater sum tree. Convert sorted array to BST."},
-        {d:"Thu",t:"Floor and ceil in BST. Two sum in BST."},
-        {d:"Fri",t:"Timed mock: 2 BST medium problems."},
-        {d:"Sat",t:"Revise BST vs BT — when does BST property help?"},
-        {d:"Sun",t:"Rest or Contest.",rest:true}
-      ]},
-      { w:"Week 17", topic:"Heap + Priority Queue + Trie", probs:55, days:[
-        {d:"Mon",t:"Min-heap, max-heap structure. Heapify. Python heapq / Java PriorityQueue."},
-        {d:"Tue",t:"Top K frequent elements, Kth largest in stream. 2 mediums."},
-        {d:"Wed",t:"Merge K sorted lists. Find median from data stream."},
-        {d:"Thu",t:"Trie — insert, search, startsWith. Implement TrieNode from scratch."},
-        {d:"Fri",t:"Trie problems — word search II, longest common prefix."},
-        {d:"Sat",t:"Revision — Heap top-K pattern + Trie node structure."},
-        {d:"Sun",t:"Rest.",rest:true}
-      ]},
-      { w:"Week 18–19", topic:"Graph Basics — BFS, DFS, Components", probs:75, days:[
-        {d:"Mon",t:"Graph representation — adjacency list, matrix. BFS traversal."},
-        {d:"Tue",t:"DFS traversal (iterative + recursive). Connected components count."},
-        {d:"Wed",t:"Number of Islands, Max Area of Island."},
-        {d:"Thu",t:"Clone Graph, Flood Fill, Surrounded Regions."},
-        {d:"Fri",t:"Cycle detection in undirected graph (BFS + DFS approaches)."},
-        {d:"Sat",t:"Revision — BFS vs DFS: when to pick which? Crisp notes."},
-        {d:"Sun",t:"Rest or Contest.",rest:true}
-      ]},
-      { w:"Week 20–21", topic:"Shortest Path + Topo Sort + Union Find", probs:110, days:[
-        {d:"Mon",t:"Dijkstra's algorithm — min heap approach. Trace on small example."},
-        {d:"Tue",t:"Bellman-Ford + negative cycles. Floyd-Warshall."},
-        {d:"Wed",t:"Topological Sort — DFS approach. Course Schedule I & II."},
-        {d:"Thu",t:"Kahn's BFS-based topo sort. Detect cycle in directed graph."},
-        {d:"Fri",t:"Disjoint Set Union (Union-Find) — union by rank + path compression."},
-        {d:"Sat",t:"Phase 3 mini-mock: 3 graph problems in 90 min."},
-        {d:"Sun",t:"Rest. Mark any weak graph area for extra practice.",rest:true}
-      ]}
+      { w:"Week 8", topic:"Tree Traversals", probs:20, days:[{d:"Mon",t:"In/Pre/Post Order"},{d:"Tue",t:"Level Order (BFS)"},{d:"Wed",t:"Right/Left Views"},{d:"Thu",t:"Diameter & Height"},{d:"Fri",t:"Max Path Sum"},{d:"Sat",t:"Revision"},{d:"Sun",t:"Rest",rest:true}] },
+      { w:"Week 9", topic:"BST & Heaps", probs:40, days:[{d:"Mon",t:"Validate BST"},{d:"Tue",t:"LCA in BT & BST"},{d:"Wed",t:"Min/Max Heap Intro"},{d:"Thu",t:"Top K Frequent"},{d:"Fri",t:"Median from Data Stream"},{d:"Sat",t:"Revision"},{d:"Sun",t:"Contest",rest:true}] },
+      { w:"Week 10", topic:"Graph Traversals", probs:60, days:[{d:"Mon",t:"Adjacency List & Matrix"},{d:"Tue",t:"BFS & DFS core"},{d:"Wed",t:"Number of Islands"},{d:"Thu",t:"Rotten Oranges"},{d:"Fri",t:"Clone Graph"},{d:"Sat",t:"Revision"},{d:"Sun",t:"Rest",rest:true}] },
+      { w:"Week 11", topic:"Shortest Path & Topo", probs:80, days:[{d:"Mon",t:"Dijkstra's Algorithm"},{d:"Tue",t:"Network Delay Time"},{d:"Wed",t:"Topo Sort (Kahn's)"},{d:"Thu",t:"Course Schedule"},{d:"Fri",t:"DSU (Union Find)"},{d:"Sat",t:"Mock Test"},{d:"Sun",t:"Rest",rest:true}] }
     ]
   },
   {
-    title: "Searching, Sorting + Binary Search Deep Dive",
-    duration: "December → Mid January (6 weeks)",
+    title: "Sorting & Binary Search",
+    duration: "Week 19 → Week 22",
     badge: "Algorithm Core",
-    patternKeys: ["sorting","binary_search"],
-    patternLabels: { sorting:"Sorting", binary_search:"Binary Search" },
-    topics: ["Sorting — Bubble, Selection, Insertion, Merge, Quick, Heap","Stability & when to use which sort","Binary Search — classic + on-answer pattern","Search in sorted variants — rotated array, 2D matrix","BS on answer — min days, painter partition, aggressive cows","Count inversions (merge sort)"],
-    resources: [{t:"yt",l:"Striver BS Series"},{t:"yt",l:"Aditya Verma BS Playlist"},{t:"lc",l:"LC Binary Search Tag"},{t:"gfg",l:"GFG Sorting Algorithms"}],
-    practice: [{t:"lc",l:"Median of Two Sorted Arrays"},{t:"lc",l:"Koko Eating Bananas"},{t:"lc",l:"Find Peak Element"},{t:"gfg",l:"Aggressive Cows"}],
-    goal: "🎯 Goal: 50–60 problems. Binary Search on answer is asked a LOT in interviews.",
-    color: "var(--accent4)",
+    patternKeys: ["binary_search"],
+    patternLabels: { binary_search:"Binary Search Variants" },
+    topics: ["BS Templates","Search in Rotated Arrays","BS on Answer (Min Days, Max Allocation)"],
+    resources: [{t:"yt",l:"Striver BS Series"}],
+    practice: [{t:"lc",l:"Koko Eating Bananas"},{t:"gfg",l:"Aggressive Cows"}],
+    goal: "🎯 Goal: Master BS on answer. It's a high-frequency interview topic.",
+    color: "#c49a00",
     weeks: [
-      { w:"Week 22–23", topic:"Sorting Algorithms — All 6", probs:8, days:[
-        {d:"Mon",t:"Bubble + Selection + Insertion sort — implement all 3, analyze stability."},
-        {d:"Tue",t:"Merge sort — implement, count inversions, time complexity proof."},
-        {d:"Wed",t:"Quick sort — partition logic, average vs worst case, randomized pivot."},
-        {d:"Thu",t:"Heap sort — using min/max heap. When is each sort best in practice?"},
-        {d:"Fri",t:"Sort colors (Dutch National Flag), sort by frequency. 2 mediums."},
-        {d:"Sat",t:"Revise — implement all 6 sorts from memory without any reference."},
-        {d:"Sun",t:"Rest or Contest.",rest:true}
-      ]},
-      { w:"Week 24", topic:"Binary Search — Classic + Variants", probs:22, days:[
-        {d:"Mon",t:"Classic binary search — iterative + recursive. lo/hi/mid template."},
-        {d:"Tue",t:"Search in rotated sorted array I & II. Find minimum in rotated array."},
-        {d:"Wed",t:"First/last position of element in sorted array. Find peak element."},
-        {d:"Thu",t:"Search in 2D matrix I & II."},
-        {d:"Fri",t:"Median of two sorted arrays (hard) — spend full 2 hrs on this."},
-        {d:"Sat",t:"Revision — BS template variations. Edge cases with lo/hi/mid."},
-        {d:"Sun",t:"Rest or Contest.",rest:true}
-      ]},
-      { w:"Week 25–26", topic:"Binary Search on Answer", probs:55, days:[
-        {d:"Mon",t:"BS on answer concept — when the answer itself is searchable. Koko."},
-        {d:"Tue",t:"Capacity to Ship Packages. Minimum Days to Make M Bouquets."},
-        {d:"Wed",t:"Aggressive Cows (GFG) — BS + greedy validity check."},
-        {d:"Thu",t:"Painter's partition. Allocate minimum number of pages."},
-        {d:"Fri",t:"Split array largest sum. Median in row-sorted matrix."},
-        {d:"Sat",t:"Phase 4 mock: 3 BS problems in 90 min."},
-        {d:"Sun",t:"Rest. Add BS on answer patterns to notes.",rest:true}
-      ]}
+      { w:"Week 12", topic:"BS Fundamentals", probs:15, days:[{d:"Mon",t:"lo/hi/mid templates"},{d:"Tue",t:"First/Last Position"},{d:"Wed",t:"Search Rotated Array"},{d:"Thu",t:"Find Minimum in Rotated"},{d:"Fri",t:"Search 2D Matrix"},{d:"Sat",t:"Revision"},{d:"Sun",t:"Rest",rest:true}] },
+      { w:"Week 13", topic:"BS on Answer", probs:30, days:[{d:"Mon",t:"Koko Eating Bananas"},{d:"Tue",t:"Capacity to Ship Packages"},{d:"Wed",t:"Aggressive Cows"},{d:"Thu",t:"Split Array Largest Sum"},{d:"Fri",t:"Median of 2 Sorted Arrays"},{d:"Sat",t:"Mock Practice"},{d:"Sun",t:"Rest",rest:true}] }
     ]
   },
   {
-    title: "Dynamic Programming — Pattern Mastery",
-    duration: "Mid January → End March (10 weeks)",
+    title: "Dynamic Programming",
+    duration: "Week 23 → Week 28",
     badge: "Most Important",
-    patternKeys: ["dp_1d","dp_knapsack","dp_strings","dp_advanced"],
-    patternLabels: { dp_1d:"1D DP", dp_knapsack:"Knapsack", dp_strings:"String DP", dp_advanced:"Advanced DP" },
-    topics: ["1D DP — Fibonacci, climbing stairs, house robber","2D DP — Grid paths, unique paths","0/1 Knapsack + all variants","Unbounded Knapsack — coin change, rod cutting","LCS + variants — LIS, Edit Distance, Palindrome","Partition DP — Matrix chain, burst balloons","DP on Trees","DP on Graphs","Bitmask DP (optional/bonus)"],
-    resources: [{t:"yt",l:"Striver DP Series (55+ videos)"},{t:"yt",l:"Neetcode DP Roadmap"},{t:"lc",l:"LC DP Study Plan"},{t:"book",l:"Aditya Verma DP Course"}],
-    practice: [{t:"lc",l:"Coin Change"},{t:"lc",l:"LIS"},{t:"lc",l:"Edit Distance"},{t:"lc",l:"Partition Equal Subset"},{t:"lc",l:"Longest Palindromic Subseq"}],
-    goal: "🎯 Goal: 100+ problems. Learn pattern recognition, not memorization. This phase wins interviews.",
-    color: "var(--accent5)",
+    patternKeys: ["dp"],
+    patternLabels: { dp:"Dynamic Programming" },
+    topics: ["1D DP (Stairs, Robber)","2D DP (Paths)","0/1 & Unbounded Knapsack","LCS & LIS variations"],
+    resources: [{t:"yt",l:"Striver DP Series"},{t:"lc",l:"Neetcode DP"}],
+    practice: [{t:"lc",l:"Coin Change"},{t:"lc",l:"Edit Distance"}],
+    goal: "🎯 Goal: Focus on memoization to tabulation translation.",
+    color: "#8b35d6",
     weeks: [
-      { w:"Week 27–28", topic:"1D DP — Fibonacci, Stairs, Robber", probs:12, days:[
-        {d:"Mon",t:"DP intro — memoization vs tabulation. Fibonacci: recursion → memo → tabulation."},
-        {d:"Tue",t:"Climbing stairs, min cost climbing stairs. 2 LC easy/medium."},
-        {d:"Wed",t:"House Robber I & II. Decode ways."},
-        {d:"Thu",t:"Jump game I & II (greedy + DP). Coin change first look."},
-        {d:"Fri",t:"Timed: 2 medium DP from this week. 45 min each."},
-        {d:"Sat",t:"Write notes: memoization template + tabulation template side by side."},
-        {d:"Sun",t:"Rest or Contest.",rest:true}
-      ]},
-      { w:"Week 29–30", topic:"2D DP + 0/1 Knapsack", probs:28, days:[
-        {d:"Mon",t:"Unique paths I & II (grid DP). Min path sum."},
-        {d:"Tue",t:"0/1 Knapsack — understand the dp[i][w] table fully. Trace manually."},
-        {d:"Wed",t:"Subset sum, partition equal subset sum. 2 mediums."},
-        {d:"Thu",t:"Target sum, last stone weight II. Knapsack variations."},
-        {d:"Fri",t:"Timed mock: Partition Equal Subset + one other knapsack variant."},
-        {d:"Sat",t:"Revision — draw knapsack dp table on paper for a small example."},
-        {d:"Sun",t:"Rest.",rest:true}
-      ]},
-      { w:"Week 31", topic:"Unbounded Knapsack + Coin Change", probs:40, days:[
-        {d:"Mon",t:"Unbounded knapsack — key difference from 0/1. Implement both back-to-back."},
-        {d:"Tue",t:"Coin Change I (min coins). Coin Change II (count ways). 2 mediums."},
-        {d:"Wed",t:"Rod cutting, integer break. Classic unbounded variants."},
-        {d:"Thu",t:"Perfect squares, minimum cost for tickets."},
-        {d:"Fri",t:"Timed: Coin Change I + II. These appear constantly in interviews."},
-        {d:"Sat",t:"Revise — write differences between all knapsack variants in notes."},
-        {d:"Sun",t:"Rest or Contest.",rest:true}
-      ]},
-      { w:"Week 32–33", topic:"LCS, LIS, Edit Distance, Palindromes", probs:62, days:[
-        {d:"Mon",t:"LCS — Longest Common Subsequence. Trace the 2D table fully."},
-        {d:"Tue",t:"Longest Common Substring (variation). Print LCS."},
-        {d:"Wed",t:"Edit Distance — understand all 3 operations in the table."},
-        {d:"Thu",t:"LIS — O(n²) DP first, then O(n log n) with patience sorting."},
-        {d:"Fri",t:"Palindromic subsequence — longest palindromic subseq, min insertions."},
-        {d:"Sat",t:"Timed mock: Edit Distance + LIS + LCS. 30 min each."},
-        {d:"Sun",t:"Rest.",rest:true}
-      ]},
-      { w:"Week 34–36", topic:"Partition DP + DP on Trees + Consolidation", probs:100, days:[
-        {d:"Mon",t:"Matrix chain multiplication — partition DP concept. Trace on paper."},
-        {d:"Tue",t:"Burst Balloons. Palindrome partitioning II (min cuts)."},
-        {d:"Wed",t:"DP on trees — diameter, max path sum, tree knapsack."},
-        {d:"Thu",t:"DP on strings — wildcard matching, regex matching (hard)."},
-        {d:"Fri",t:"Phase 5 mock: 3 DP problems in 90 min (one per pattern group)."},
-        {d:"Sat",t:"Full Phase 5 revision — go through notes, re-identify weak patterns."},
-        {d:"Sun",t:"Rest. DP phase done — biggest phase behind you.",rest:true}
-      ]}
+      { w:"Week 14", topic:"1D DP", probs:15, days:[{d:"Mon",t:"Fibonacci & Stairs"},{d:"Tue",t:"House Robber I & II"},{d:"Wed",t:"Jump Game DP"},{d:"Thu",t:"Decode Ways"},{d:"Fri",t:"1D DP Revision"},{d:"Sat",t:"Mock Test"},{d:"Sun",t:"Rest",rest:true}] },
+      { w:"Week 15", topic:"Knapsack DP", probs:30, days:[{d:"Mon",t:"0/1 Knapsack concept"},{d:"Tue",t:"Partition Equal Subset"},{d:"Wed",t:"Target Sum"},{d:"Thu",t:"Unbounded Knapsack"},{d:"Fri",t:"Coin Change I & II"},{d:"Sat",t:"Revision"},{d:"Sun",t:"Contest",rest:true}] },
+      { w:"Week 16", topic:"Strings DP", probs:45, days:[{d:"Mon",t:"Longest Common Subsequence"},{d:"Tue",t:"Edit Distance"},{d:"Wed",t:"Longest Increasing Subsequence"},{d:"Thu",t:"Palindromic Substrings"},{d:"Fri",t:"Wildcard Matching"},{d:"Sat",t:"DP Full Revision"},{d:"Sun",t:"Rest",rest:true}] }
     ]
   },
   {
-    title: "Mock Interviews + Pattern Consolidation",
-    duration: "April → Mid June (10 weeks)",
-    badge: "Execution Phase",
+    title: "DSA Mocks & Consolidation",
+    duration: "Week 29 → Week 34",
+    badge: "Execution",
     patternKeys: ["mock_prep"],
-    patternLabels: { mock_prep:"Company Questions" },
-    topics: ["Company-wise question lists (Amazon, Flipkart, Paytm, Swiggy, Zepto, CRED)","Timed mock rounds — 45 min per problem max","Blind 75 / NeetCode 150 full pass","System Design basics intro (HLD/LLD)","Revision — weak topics from previous phases","Pramp / Interviewing.io mock sessions","CS fundamentals — OS, DBMS, CN basics"],
-    resources: [{t:"lc",l:"LC Company Tags (Premium)"},{t:"yt",l:"NeetCode 150 Full Pass"},{t:"gfg",l:"GFG Interview Bit"},{t:"book",l:"Pramp (free mocks)"}],
-    practice: [{t:"gfg",l:"Striver SDE Sheet (Full)"},{t:"lc",l:"GFG Must-Do 450"},{t:"yt",l:"Love Babbar 450"}],
-    goal: "🎯 Goal: Simulate real interview pressure. Speed + accuracy both matter now.",
-    color: "var(--accent6)",
+    patternLabels: { mock_prep:"Company Specific" },
+    topics: ["Amazon/Flipkart tags","Blind 75 pass","Timed 45-min rounds"],
+    resources: [{t:"book",l:"Pramp Mocks"},{t:"yt",l:"Interviewing.io"}],
+    practice: [{t:"lc",l:"Company Tags"},{t:"lc",l:"Blind 75"}],
+    goal: "🎯 Goal: Simulate real pressure. Speed + Accuracy.",
+    color: "#d95f1a",
     weeks: [
-      { w:"Week 37–38", topic:"Company Lists — Amazon + Flipkart", probs:20, days:[
-        {d:"Mon",t:"Amazon top LC questions — solve 2, read approaches for 3 more."},
-        {d:"Tue",t:"LC Amazon tag — Arrays + DP problems. 2 mediums timed."},
-        {d:"Wed",t:"Flipkart/Myntra tag problems. Focus on graph + tree questions."},
-        {d:"Thu",t:"System Design basics — read about URL shortener, design LRU cache."},
-        {d:"Fri",t:"Pramp or Interviewing.io — book 1 mock session this week."},
-        {d:"Sat",t:"Revise OS basics — process vs thread, deadlock, paging."},
-        {d:"Sun",t:"Rest.",rest:true}
-      ]},
-      { w:"Week 39–40", topic:"Blind 75 Full Pass", probs:45, days:[
-        {d:"Mon",t:"Blind 75 — Arrays + Binary section. 2–3 per day timed."},
-        {d:"Tue",t:"Blind 75 — Dynamic Programming section. Note which patterns appear."},
-        {d:"Wed",t:"Blind 75 — Graph + Tree section. Focus on problems not solved recently."},
-        {d:"Thu",t:"Blind 75 — String + Heap + Interval section."},
-        {d:"Fri",t:"Full timed mock: 3 problems in 90 min. Treat it as a real interview."},
-        {d:"Sat",t:"Revise DBMS basics — indexing, normalization, transactions, ACID."},
-        {d:"Sun",t:"Rest or Contest.",rest:true}
-      ]},
-      { w:"Week 41–42", topic:"Startup Lists — Swiggy, Zepto, CRED, Paytm", probs:65, days:[
-        {d:"Mon",t:"Swiggy/Zomato tag — LC company-wise or GFG. 2–3 problems."},
-        {d:"Tue",t:"CRED/Zepto style — focus on string + greedy + stack problems."},
-        {d:"Wed",t:"Paytm/PhonePe style — graph + DP questions."},
-        {d:"Thu",t:"Think-aloud practice — 1 problem narrating approach in front of mirror."},
-        {d:"Fri",t:"Mock interview session (Pramp or with a friend). 45 min slot."},
-        {d:"Sat",t:"Revise CN basics — TCP/IP, HTTP vs HTTPS, DNS, load balancing."},
-        {d:"Sun",t:"Rest.",rest:true}
-      ]},
-      { w:"Week 43–44", topic:"Weak Spot Elimination + Hard Problems", probs:80, days:[
-        {d:"Mon",t:"Identify top 3 weak topics from tracking sheet. Solve 2 per topic."},
-        {d:"Tue",t:"Hard problems — 1 per day. Don't peek < 40 min."},
-        {d:"Wed",t:"Re-solve problems you got wrong in earlier mocks."},
-        {d:"Thu",t:"LLD basics — design a parking lot, design an elevator system."},
-        {d:"Fri",t:"Full 90 min mock: 2 problems. Record yourself if possible."},
-        {d:"Sat",t:"Revise all golden rules. Re-read Phase 1–5 summaries."},
-        {d:"Sun",t:"Rest.",rest:true}
-      ]},
-      { w:"Week 45–47", topic:"Final Sprint — Active Applications", probs:100, days:[
-        {d:"Mon",t:"Daily: 1 medium LC timed (30 min). If not solved, read editorial."},
-        {d:"Tue",t:"1 company-specific problem. Practice explaining solution in 2 min."},
-        {d:"Wed",t:"System Design reading — 1 HLD case per week (WhatsApp, Instagram)."},
-        {d:"Thu",t:"Revise 5 problems from a random past week. Spaced repetition."},
-        {d:"Fri",t:"Mock interview. Focus on communication and clarity."},
-        {d:"Sat",t:"Rest or light revision."},
-        {d:"Sun",t:"Rest. You've done the work.",rest:true}
-      ]}
+      { w:"Week 17", topic:"Company Lists", probs:15, days:[{d:"Mon",t:"Amazon Top Qs"},{d:"Tue",t:"Flipkart Top Qs"},{d:"Wed",t:"Timed Session (2 Mediums)"},{d:"Thu",t:"Weak Spot Practice"},{d:"Fri",t:"Peer Mock Interview"},{d:"Sat",t:"Review Notes"},{d:"Sun",t:"Rest",rest:true}] },
+      { w:"Week 18", topic:"Final Sprint", probs:30, days:[{d:"Mon",t:"Blind 75 Fast Pass"},{d:"Tue",t:"Blind 75 Fast Pass"},{d:"Wed",t:"Think Aloud Practice"},{d:"Thu",t:"Hard Problems Practice"},{d:"Fri",t:"Platform Mock (Pramp)"},{d:"Sat",t:"Review"},{d:"Sun",t:"Rest",rest:true}] }
+    ]
+  },
+
+  // System Design Phases (6 - 9)
+  {
+    title: "SD Core — Networking, DBs & Caching",
+    duration: "SD Week 1 → SD Week 4 (Parallel w/ DSA)",
+    badge: "SD Basics",
+    patternKeys: ["sd_networking_db", "sd_caching_mq"],
+    patternLabels: { sd_networking_db:"Networking & DBs", sd_caching_mq:"Caching & Queues" },
+    topics: ["HTTP, TCP, WebSockets","SQL vs NoSQL, Indexing, Sharding","Redis, Eviction policies","Kafka, Message Queues, Load Balancers"],
+    resources: [{t:"read",l:"ByteByteGo Newsletter"},{t:"yt",l:"Hussein Nasser"}],
+    practice: [{t:"read",l:"DDIA Chapters 1-3"}],
+    goal: "🎯 Goal: Understand the 'Why' behind tech choices (e.g., Why Mongo over Postgres?).",
+    color: "#0e7490",
+    weeks: [
+      { w:"SD W1", topic:"Networking & API", probs:4, days:[{d:"Mon",t:"Study HTTP/HTTPS Lifecycle"},{d:"Tue",t:"TCP vs UDP tradeoffs"},{d:"Wed",t:"DNS & CDN concepts"},{d:"Thu",t:"REST vs GraphQL"},{d:"Fri",t:"WebSockets & SSE (Connect to Socket.io)"},{d:"Sat",t:"Write Notes"},{d:"Sun",t:"Rest",rest:true}] },
+      { w:"SD W2", topic:"Database Deep Dive", probs:8, days:[{d:"Mon",t:"SQL vs NoSQL (ACID vs BASE)"},{d:"Tue",t:"B-Tree Indexing"},{d:"Wed",t:"Sharding & Partitioning"},{d:"Thu",t:"Replication Strategies"},{d:"Fri",t:"CAP Theorem"},{d:"Sat",t:"Write Notes"},{d:"Sun",t:"Rest",rest:true}] },
+      { w:"SD W3", topic:"Caching & Queues", probs:12, days:[{d:"Mon",t:"Redis vs Memcached"},{d:"Tue",t:"Cache Writing/Eviction Policies"},{d:"Wed",t:"Message Queues (Kafka vs RabbitMQ)"},{d:"Thu",t:"Load Balancing (L4 vs L7)"},{d:"Fri",t:"Consistent Hashing"},{d:"Sat",t:"Write Notes"},{d:"Sun",t:"Rest",rest:true}] }
+    ]
+  },
+  {
+    title: "High Level Design (HLD) Cases",
+    duration: "SD Week 5 → SD Week 8",
+    badge: "HLD",
+    patternKeys: ["hld_standard", "hld_advanced"],
+    patternLabels: { hld_standard:"Tier 1 Systems", hld_advanced:"Tier 2 Systems" },
+    topics: ["URL Shortener, Rate Limiter","WhatsApp, Instagram, YouTube","Capacity Estimation Math"],
+    resources: [{t:"book",l:"Alex Xu Vol 1 & 2"},{t:"yt",l:"Gaurav Sen"}],
+    practice: [{t:"read",l:"Hello Interview"}],
+    goal: "🎯 Goal: Master the 5-step framework (Reqs -> Cap -> API -> DB -> Diagram).",
+    color: "#1d4ed8",
+    weeks: [
+      { w:"SD W4", topic:"Foundational HLD", probs:4, days:[{d:"Mon",t:"Capacity Estimation Math"},{d:"Tue",t:"Design URL Shortener"},{d:"Wed",t:"Design Rate Limiter"},{d:"Thu",t:"Design Key-Value Store"},{d:"Fri",t:"Design Notification System"},{d:"Sat",t:"Draw Diagrams"},{d:"Sun",t:"Rest",rest:true}] },
+      { w:"SD W5", topic:"Social & Streaming", probs:8, days:[{d:"Mon",t:"Design WhatsApp (WebSockets)"},{d:"Tue",t:"Design Instagram (Fanout)"},{d:"Wed",t:"Design YouTube (CDN)"},{d:"Thu",t:"Design Uber (Geospatial)"},{d:"Fri",t:"Design Search Autocomplete"},{d:"Sat",t:"Draw Diagrams"},{d:"Sun",t:"Rest",rest:true}] }
+    ]
+  },
+  {
+    title: "Low Level Design (LLD) & OOP",
+    duration: "SD Week 9 → SD Week 12",
+    badge: "LLD",
+    patternKeys: ["lld_oops", "lld_cases"],
+    patternLabels: { lld_oops:"OOP & Patterns", lld_cases:"LLD Systems" },
+    topics: ["SOLID Principles","Creational, Structural, Behavioral Patterns","Parking Lot, BookMyShow, Splitwise"],
+    resources: [{t:"read",l:"Refactoring.Guru"},{t:"yt",l:"Udit Agarwal LLD"}],
+    practice: [{t:"book",l:"Head First Design Patterns"}],
+    goal: "🎯 Goal: Write clean, extensible class structures. Indian startups love LLD.",
+    color: "#be185d",
+    weeks: [
+      { w:"SD W6", topic:"OOP & Design Patterns", probs:4, days:[{d:"Mon",t:"SOLID Principles"},{d:"Tue",t:"Singleton, Factory, Builder"},{d:"Wed",t:"Observer, Strategy"},{d:"Thu",t:"Decorator, Adapter"},{d:"Fri",t:"Code implementations"},{d:"Sat",t:"Review Concepts"},{d:"Sun",t:"Rest",rest:true}] },
+      { w:"SD W7", topic:"LLD Case Studies", probs:8, days:[{d:"Mon",t:"Design Parking Lot"},{d:"Tue",t:"Design BookMyShow (Concurrency)"},{d:"Wed",t:"Design Splitwise"},{d:"Thu",t:"Design Elevator System"},{d:"Fri",t:"Design Library Management"},{d:"Sat",t:"Draw Class Diagrams"},{d:"Sun",t:"Rest",rest:true}] }
+    ]
+  },
+  {
+    title: "SD Mock Interviews & Execution",
+    duration: "SD Week 13 → SD Week 15",
+    badge: "SD Mocks",
+    patternKeys: ["sd_mock_prep"],
+    patternLabels: { sd_mock_prep:"Execution" },
+    topics: ["Think aloud practice","Trade-off communication","Peer mock interviews"],
+    resources: [{t:"read",l:"Pramp SD Mocks"},{t:"yt",l:"Jordan has No Life"}],
+    practice: [{t:"read",l:"System Design Primer"}],
+    goal: "🎯 Goal: Confidently drive a 45-minute technical discussion.",
+    color: "#047857",
+    weeks: [
+      { w:"SD W8", topic:"Framework & Practice", probs:4, days:[{d:"Mon",t:"Revise 45-min Framework"},{d:"Tue",t:"Mock: E-commerce Checkout"},{d:"Wed",t:"Mock: Ad Click Aggregation"},{d:"Thu",t:"Peer Mock Session"},{d:"Fri",t:"Review Tradeoffs (SQL vs NoSQL etc)"},{d:"Sat",t:"Review Notes"},{d:"Sun",t:"Rest",rest:true}] }
     ]
   }
 ];
 
-const PBAR_COLORS = ['#5b4de0','#0f9d8b','#e03f39','#c49a00','#8b35d6','#d95f1a'];
 let weekDone = {};
 let qDone = {};
-try { weekDone = JSON.parse(localStorage.getItem('dsa_week_done')||'{}'); } catch(e){}
-try { qDone = JSON.parse(localStorage.getItem('dsa_q_done')||'{}'); } catch(e){}
+try { weekDone = JSON.parse(localStorage.getItem('dsa_sd_week_done')||'{}'); } catch(e){}
+try { qDone = JSON.parse(localStorage.getItem('dsa_sd_q_done')||'{}'); } catch(e){}
 
 function save() {
   try {
-    localStorage.setItem('dsa_week_done', JSON.stringify(weekDone));
-    localStorage.setItem('dsa_q_done', JSON.stringify(qDone));
+    localStorage.setItem('dsa_sd_week_done', JSON.stringify(weekDone));
+    localStorage.setItem('dsa_sd_q_done', JSON.stringify(qDone));
   } catch(e) {}
 }
 
@@ -1144,7 +799,7 @@ function buildProgressBars() {
     const done = p.weeks.filter((_,wi) => weekDone[`${pi}-${wi}`]).length;
     const pct = total > 0 ? Math.round((done/total)*100) : 0;
     wrap.innerHTML += `<div class="pbar-row">
-      <span class="pbar-label">Phase ${pi+1}</span>
+      <span class="pbar-label">${pi < 6 ? 'Phase ' + (pi+1) : 'SD ' + (pi-5)}</span>
       <div class="pbar-track"><div class="pbar-fill" style="width:${pct}%;background:${PBAR_COLORS[pi]};"></div></div>
       <span class="pbar-pct">${pct}%</span>
     </div>`;
@@ -1197,9 +852,9 @@ function buildAllPhases() {
               <table class="questions-table">
                 <thead><tr>
                   <th style="width:32px;"></th>
-                  <th>Problem</th>
+                  <th>Topic / Problem</th>
                   <th>Diff</th>
-                  <th>Platform</th>
+                  <th>Source</th>
                   <th>Note</th>
                 </tr></thead>
                 <tbody>
@@ -1234,7 +889,7 @@ function buildAllPhases() {
           <span class="week-num">${w.w}</span>
           <span class="week-topic">${w.topic}</span>
           <div class="week-meta">
-            <span class="week-probs">~${w.probs} probs cumulative</span>
+            <span class="week-probs">${w.probs} concepts/probs</span>
             <button class="week-done-btn${isDone?' done':''}" onclick="toggleDone(${pi},${wi},event)" id="btn-${pi}-${wi}">${isDone?'✓ Done':'Mark Done'}</button>
           </div>
           <span class="chevron" id="chev-${pi}-${wi}">▸</span>
@@ -1251,21 +906,21 @@ function buildAllPhases() {
             <div class="phase-overview-title">${p.title}</div>
             <div class="phase-overview-meta">
               <span class="phase-duration">📅 ${p.duration}</span>
-              <span class="phase-badge">${p.badge}</span>
+              <span class="phase-badge" style="color:${p.color}; background:${p.color}15;">${p.badge}</span>
             </div>
           </div>
         </div>
         <div class="phase-overview-body">
           <div class="topics-section">
-            <h3>Topics</h3>
+            <h3>Key Topics</h3>
             <ul class="topic-list">${topicsHtml}</ul>
-            <div class="goal-box">${p.goal}</div>
+            <div class="goal-box" style="border-left-color:${p.color}; color:${p.color}; background:${p.color}0A;">${p.goal}</div>
           </div>
           <div class="resources-section">
             <h3>Resources</h3>
             <div class="resource-chips">${resHtml}</div>
             <br>
-            <h3>Practice Lists</h3>
+            <h3>Practice Focus</h3>
             <div class="resource-chips">${pracHtml}</div>
           </div>
         </div>
@@ -1274,9 +929,9 @@ function buildAllPhases() {
       <div class="phase-section visible" id="sec-${pi}-0">
         <div style="padding:20px;background:var(--surface);border:1px solid var(--border);border-radius:10px;box-shadow:var(--shadow);">
           <p style="font-size:13px;color:var(--muted);line-height:1.8;">
-            Use the <strong style="color:var(--text)">Patterns & Questions</strong> tab to see all question patterns for this phase with individual problem checklists.<br><br>
+            Use the <strong style="color:var(--text)">Patterns & Questions</strong> tab to see all topics/patterns for this phase with individual problem checklists.<br><br>
             Use the <strong style="color:var(--text)">Weekly Plan</strong> tab to see the day-by-day schedule for the entire phase.<br><br>
-            Mark weeks as <strong style="color:var(--accent3)">Done</strong> in the Weekly Plan — progress bars update automatically.
+            Mark weeks as <strong style="color:var(--accent3)">Done</strong> in the Weekly Plan to update your progress bars.
           </p>
         </div>
       </div>
@@ -1337,298 +992,6 @@ function switchPhase(i) {
 
 buildAllPhases();
 buildProgressBars();
-buildSDSection();
-
-// ─── SYSTEM DESIGN DATA ────────────────────────────────────────────────────
-const SD_ACCENT = '#0e7490';
-
-const SD_PHASES = [
-  {
-    phase: "Phase A — Foundations (Parallel with DSA Phase 1–2)",
-    duration: "Jun → Sep 2026 · 30 min/day on weekends",
-    color: "#5b4de0",
-    badge: "Pre-req",
-    desc: "CS fundamentals jo bina samjhe system design blindly ratt nahi hoga. Ye sab already backend developer ke roop mein kaam aata hai.",
-    topics: [
-      { icon: "🌐", name: "Networking Basics", items: ["HTTP/HTTPS — request/response, headers, status codes","TCP vs UDP — connection-oriented vs connectionless","DNS — how domain resolves to IP, TTL, caching","CDN — how static assets are served globally","WebSockets vs Long Polling vs SSE — real-time comparison","REST vs GraphQL — when to use which"] },
-      { icon: "🗄️", name: "Database Fundamentals", items: ["SQL vs NoSQL — ACID vs BASE, CAP theorem","Indexing — B-tree, hash index, composite index","Normalization (1NF–3NF) vs denormalization trade-offs","Transactions — ACID properties, isolation levels","Sharding — horizontal partitioning strategies","Replication — master-slave, master-master"] },
-      { icon: "⚙️", name: "OS & Concurrency", items: ["Process vs Thread vs Coroutine","Mutex, Semaphore, Race condition","Deadlock — detection, prevention","Caching concepts — LRU, LFU, write-through, write-back","Memory hierarchy — L1/L2/RAM/Disk latency numbers"] },
-    ],
-    resources: [
-      { label: "ByteByteGo Newsletter (free)", type: "read" },
-      { label: "CS75 Harvard Lecture (YouTube)", type: "yt" },
-      { label: "Hussein Nasser Fundamentals", type: "yt" },
-      { label: "High Scalability Blog", type: "read" },
-    ]
-  },
-  {
-    phase: "Phase B — Core System Design Concepts (Parallel with DSA Phase 3–4)",
-    duration: "Sep → Jan · 45 min/day on weekends",
-    color: "#0f9d8b",
-    badge: "Core",
-    desc: "Ye woh building blocks hain jo har system design interview mein kaam aate hain. In sab ko deep samjho — not just definitions.",
-    topics: [
-      { icon: "📦", name: "Caching", items: ["Redis vs Memcached — when to use which","Cache eviction policies — LRU, LFU, FIFO","Cache-aside vs Read-through vs Write-through vs Write-back","Cache stampede / thundering herd problem","Distributed caching — consistent hashing","CDN as a cache layer"] },
-      { icon: "📨", name: "Message Queues & Event Streaming", items: ["Why async processing? Decoupling producers & consumers","Kafka vs RabbitMQ vs SQS — core differences","Topics, partitions, consumer groups (Kafka)","Dead letter queues, retry policies","Event-driven architecture vs request-response","BullMQ (you already know this!) → connect to Kafka concepts"] },
-      { icon: "⚖️", name: "Load Balancing", items: ["L4 vs L7 load balancing","Round robin, least connections, consistent hashing","Sticky sessions — problem and solution","Health checks and circuit breakers","Reverse proxy (Nginx) vs API Gateway","Rate limiting — token bucket, leaky bucket algorithms"] },
-      { icon: "🔢", name: "Consistent Hashing", items: ["Why regular hashing breaks on node add/remove","Virtual nodes — how it solves hotspots","Use cases: distributed caches, DB sharding, CDN routing","Rendezvous hashing as alternative"] },
-      { icon: "🏗️", name: "Storage Systems", items: ["Object storage (S3) vs Block storage vs File storage","SQL sharding strategies — range, hash, directory","NoSQL types — Document (MongoDB), Key-Value (Redis), Wide-column (Cassandra), Graph (Neo4j)","Time series databases — InfluxDB, for metrics","Search engines — Elasticsearch, inverted index","Data lakes vs data warehouses"] },
-      { icon: "🔐", name: "Security in SD", items: ["Authentication — Session vs JWT vs OAuth 2.0","API keys, rate limiting per user","HTTPS, TLS handshake","SQL injection, XSS — how to prevent at system level","Secret management — vault, env vars, KMS"] },
-    ],
-    resources: [
-      { label: "Designing Data-Intensive Apps (DDIA) — Kleppmann", type: "book" },
-      { label: "System Design Interview Vol 1 — Alex Xu", type: "book" },
-      { label: "ByteByteGo YouTube", type: "yt" },
-      { label: "Gaurav Sen System Design", type: "yt" },
-    ]
-  },
-  {
-    phase: "Phase C — HLD (High Level Design) Case Studies (Parallel with DSA Phase 5)",
-    duration: "Jan → Apr 2027 · 1 hr on weekends",
-    color: "#e03f39",
-    badge: "HLD",
-    desc: "Standard system design questions jo product companies mein pooche jaate hain. Har ek ko framework ke saath solve karo: Requirements → Capacity → API → Data Model → HLD → Deep Dive.",
-    topics: [
-      { icon: "🔗", name: "Tier 1 — Must Know Cold", items: ["URL Shortener (Bitly) — hashing, redirects, analytics","Rate Limiter — token bucket, Redis sliding window","Key-Value Store — consistent hashing, replication","Unique ID Generator — Snowflake ID, UUID tradeoffs","Web Crawler — BFS, politeness, dedup with Bloom filter","Notification System — push/pull, fanout, APNs/FCM"] },
-      { icon: "💬", name: "Tier 2 — High Frequency", items: ["Chat System (WhatsApp) — WebSockets, message delivery guarantees, group chat fanout","News Feed (Instagram/Twitter) — push vs pull fanout, ranking","Video Streaming (YouTube/Netflix) — chunking, CDN, adaptive bitrate","Search Autocomplete — Trie, prefix search, top-K with heap","Ride Sharing (Uber/Ola) — geospatial indexing, driver matching, surge pricing","E-commerce Cart + Checkout — inventory reservation, distributed transactions"] },
-      { icon: "📊", name: "Tier 3 — Bonus / Senior Level", items: ["Distributed Message Queue (Kafka from scratch) — broker, partition, replication","Google Docs (Collaborative Editor) — OT vs CRDT, conflict resolution","Payment System — idempotency keys, saga pattern, double-spend prevention","Ad Click Aggregation — stream processing, Lambda architecture","Distributed Cache (Redis from scratch) — data structures, persistence RDB/AOF","Hotel Booking System — seat locking, optimistic locking, overbooking handling"] },
-    ],
-    resources: [
-      { label: "System Design Interview Vol 2 — Alex Xu", type: "book" },
-      { label: "ByteByteGo System Design Course", type: "book" },
-      { label: "Exponent Mock Interviews", type: "read" },
-      { label: "Hello Interview (free cases)", type: "read" },
-    ]
-  },
-  {
-    phase: "Phase D — LLD (Low Level Design) — OOP + Design Patterns (Parallel with DSA Phase 5–6)",
-    duration: "Feb → Jun 2027 · 1 hr on weekends",
-    color: "#8b35d6",
-    badge: "LLD",
-    desc: "Indian product companies (Flipkart, Paytm, Zepto, CRED) heavily ask LLD. Class diagrams, SOLID principles, and design patterns are the core.",
-    topics: [
-      { icon: "🧱", name: "OOP & SOLID Principles", items: ["4 pillars — Encapsulation, Abstraction, Inheritance, Polymorphism","Single Responsibility — one reason to change","Open/Closed — extend without modifying","Liskov Substitution — subclass must replace base class","Interface Segregation — small specific interfaces","Dependency Inversion — depend on abstractions","DRY, KISS, YAGNI principles"] },
-      { icon: "🎨", name: "Design Patterns (Creational)", items: ["Singleton — single instance, thread safety","Factory Method — create without specifying class","Abstract Factory — families of objects","Builder — complex object step-by-step (great for your Node.js code)","Prototype — clone objects"] },
-      { icon: "🔗", name: "Design Patterns (Structural)", items: ["Adapter — incompatible interfaces","Decorator — add behavior without changing class","Facade — simplified interface to complex system","Proxy — access control, lazy loading","Composite — tree structures"] },
-      { icon: "🔄", name: "Design Patterns (Behavioural)", items: ["Observer — event-driven, pub/sub (you use this in Socket.io!)","Strategy — interchangeable algorithms","Command — encapsulate operations as objects","Iterator — traverse collections","Chain of Responsibility — middleware pattern (Express middleware!)","State — state machine implementation","Template Method — algorithm skeleton"] },
-      { icon: "🏛️", name: "LLD Case Studies", items: ["Parking Lot — spots, floors, ticketing, payment","Library Management System — books, members, fines","Chess Game — board, pieces, move validation, game state","Elevator System — scheduling algorithms, multiple elevators","BookMyShow — seat reservation, concurrent booking","Amazon Locker — locker assignment, expiry, OTP","Splitwise — group expenses, settlement algorithm","Snake & Ladder — game loop, dice, players"] },
-    ],
-    resources: [
-      { label: "Refactoring.Guru (free, excellent)", type: "read" },
-      { label: "Head First Design Patterns (book)", type: "book" },
-      { label: "Udit Agarwal LLD YouTube", type: "yt" },
-      { label: "Ashish Pratap Singh LLD Series", type: "yt" },
-    ]
-  },
-  {
-    phase: "Phase E — Mock SD Interviews (Parallel with DSA Phase 6)",
-    duration: "Apr → Jun 2027",
-    color: "#d95f1a",
-    badge: "Execution",
-    desc: "SD mein theory jaanna aur interview mein deliver karna alag hai. Framework follow karo, practice karo, nervous mat ho.",
-    topics: [
-      { icon: "📐", name: "SD Interview Framework", items: ["Step 1 — Clarify requirements (functional + non-functional) — 5 min","Step 2 — Capacity estimation — QPS, storage, bandwidth — 5 min","Step 3 — API design — endpoints, request/response — 5 min","Step 4 — Data model — tables/collections, indexes — 5 min","Step 5 — High-level diagram — components, data flow — 10 min","Step 6 — Deep dive one component the interviewer asks — 15 min","Always ask: what scale? (1K users vs 1B users = different designs)"] },
-      { icon: "🗣️", name: "Communication Tips", items: ["Think out loud — interviewer wants to see your reasoning","Say tradeoffs explicitly — 'I'm choosing X over Y because...'","Don't jump to solution — ask clarifying questions first","Draw while you talk — boxes, arrows, labels","Acknowledge what you don't know — don't bluff","Ask for feedback mid-way — 'Does this direction make sense?'"] },
-      { icon: "🎯", name: "Mock Practice Plan", items: ["Week 1–2: 1 HLD case/week with timer (45 min), write on paper","Week 3–4: Pramp SD sessions (free), record yourself","Week 5–6: Peer mock with friend — give each other feedback","Maintain a 'SD Notes' doc — one page per case study","Re-read DDIA Chapter summaries before interviews","Company research — what tech stack do they use? Design for their scale"] },
-    ],
-    resources: [
-      { label: "Pramp — Free SD Mocks", type: "read" },
-      { label: "Interviewing.io — Paid but worth it", type: "read" },
-      { label: "System Design Primer (GitHub)", type: "read" },
-      { label: "Jordan has No Life — SD Series", type: "yt" },
-    ]
-  },
-];
-
-const SD_CHECKLIST = [
-  { section: "Fundamentals", items: ["Understood HTTP/HTTPS, TCP/UDP, DNS, CDN","Learned SQL vs NoSQL + CAP theorem","Know caching strategies (LRU, write-through, etc.)","Understand indexing, sharding, replication","Know OS concepts: process, thread, mutex, deadlock","Understood REST vs GraphQL, WebSockets vs SSE"] },
-  { section: "Core Concepts", items: ["Can explain Load Balancing + rate limiting","Understand Message Queues (Kafka / RabbitMQ)","Know Consistent Hashing deeply","Understand Object Storage vs SQL vs NoSQL tradeoffs","Can explain OAuth 2.0 / JWT auth flow","Know Redis data structures beyond just cache"] },
-  { section: "HLD Cases", items: ["URL Shortener — designed end to end","Rate Limiter — token bucket implemented","Chat System (WhatsApp) — done","News Feed — push vs pull fanout understood","Video Streaming (YouTube) — chunking + CDN done","Ride Sharing (Uber) — geospatial indexing done","Search Autocomplete — Trie + top-K done","Notification System — done"] },
-  { section: "LLD Cases", items: ["Parking Lot — full class diagram done","Chess Game — pieces, moves, state done","BookMyShow — concurrent booking handled","Elevator System — scheduling algorithm done","Splitwise — settlement algorithm done","All SOLID principles with examples","Observer, Strategy, Builder patterns coded"] },
-  { section: "Mock Practice", items: ["Completed 4+ timed HLD mocks (45 min each)","Completed 4+ Pramp / peer SD sessions","Maintained SD notes doc (1 page per case)","Practiced think-aloud for at least 5 problems","Reviewed company's tech blog before interviews","Revised capacity estimation formulas"] },
-];
-
-function buildSDSection() {
-  const wrap = document.getElementById('allPhases');
-
-  const block = document.createElement('div');
-  block.className = 'phase-block p6';
-  block.id = 'phase-6';
-
-  // Overview header
-  let html = `
-    <div class="phase-overview p6" style="margin-bottom:20px;">
-      <div class="phase-overview-header" style="background:rgba(14,116,144,0.04);">
-        <div class="phase-accent-bar" style="background:#0e7490;"></div>
-        <div>
-          <div class="phase-overview-title">System Design — Complete Syllabus</div>
-          <div class="phase-overview-meta">
-            <span class="phase-duration">📅 Throughout the year — parallel with DSA phases</span>
-            <span class="phase-badge" style="background:rgba(14,116,144,0.1);color:#0e7490;">5 Sub-Phases</span>
-          </div>
-        </div>
-      </div>
-      <div style="padding:20px 26px;background:rgba(14,116,144,0.03);border-bottom:1px solid var(--border);">
-        <p style="font-size:13px;color:var(--muted);line-height:1.8;max-width:700px;">
-          System Design ko DSA ke saath <strong style="color:var(--text)">parallel</strong> padhna hai — weekend pe 30–60 min. Ye 5 phases mein divided hai: Foundations → Core Concepts → HLD Cases → LLD/Design Patterns → Mock Practice. SDE-1 switch ke liye <strong style="color:#0e7490">LLD most important</strong> hai, HLD secondary.
-        </p>
-        <div style="display:flex;gap:12px;margin-top:16px;flex-wrap:wrap;">
-          <div style="background:rgba(91,77,224,0.08);border:1px solid rgba(91,77,224,0.2);border-radius:8px;padding:10px 16px;font-family:var(--mono);font-size:11px;color:#5b4de0;">📅 Phase A: Jun–Sep (Weekends)</div>
-          <div style="background:rgba(15,157,139,0.08);border:1px solid rgba(15,157,139,0.2);border-radius:8px;padding:10px 16px;font-family:var(--mono);font-size:11px;color:#0f9d8b;">📅 Phase B: Sep–Jan (Weekends)</div>
-          <div style="background:rgba(224,63,57,0.08);border:1px solid rgba(224,63,57,0.2);border-radius:8px;padding:10px 16px;font-family:var(--mono);font-size:11px;color:#e03f39;">📅 Phase C: Jan–Apr (1hr/weekend)</div>
-          <div style="background:rgba(139,53,214,0.08);border:1px solid rgba(139,53,214,0.2);border-radius:8px;padding:10px 16px;font-family:var(--mono);font-size:11px;color:#8b35d6;">📅 Phase D: Feb–Jun (1hr/weekend)</div>
-          <div style="background:rgba(217,95,26,0.08);border:1px solid rgba(217,95,26,0.2);border-radius:8px;padding:10px 16px;font-family:var(--mono);font-size:11px;color:#d95f1a;">📅 Phase E: Apr–Jun (Mocks)</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="phase-section-tabs" style="margin-bottom:16px;">
-      <button class="psec-tab active" onclick="switchSDSec(0,this)">📚 Syllabus by Phase</button>
-      <button class="psec-tab" onclick="switchSDSec(1,this)">✅ Master Checklist</button>
-      <button class="psec-tab" onclick="switchSDSec(2,this)">📐 SD Framework</button>
-    </div>
-
-    <div id="sd-sec-0" class="phase-section visible">`;
-
-  // SD Phases
-  SD_PHASES.forEach((sdp, spi) => {
-    html += `
-      <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:16px;box-shadow:var(--shadow);">
-        <div style="display:flex;align-items:center;gap:16px;padding:18px 24px;background:var(--surface2);border-bottom:1px solid var(--border);">
-          <div style="width:4px;height:44px;border-radius:2px;flex-shrink:0;background:${sdp.color};"></div>
-          <div style="flex:1;">
-            <div style="font-size:15px;font-weight:700;color:var(--text);margin-bottom:3px;">${sdp.phase}</div>
-            <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
-              <span style="font-family:var(--mono);font-size:11px;color:var(--muted);">📅 ${sdp.duration}</span>
-              <span style="font-family:var(--mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;padding:2px 8px;border-radius:2px;background:rgba(0,0,0,0.05);color:${sdp.color};">${sdp.badge}</span>
-            </div>
-          </div>
-        </div>
-        <div style="padding:16px 24px 8px;border-bottom:1px solid var(--border);background:rgba(0,0,0,0.01);">
-          <p style="font-size:12.5px;color:var(--muted);line-height:1.7;">${sdp.desc}</p>
-        </div>
-        <div style="padding:20px 24px;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;">
-          ${sdp.topics.map(t => `
-            <div style="background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:14px;">
-              <div style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:10px;">${t.icon} ${t.name}</div>
-              <ul style="list-style:none;display:flex;flex-direction:column;gap:5px;">
-                ${t.items.map(i=>`<li style="font-size:12px;color:#3a3555;line-height:1.5;display:flex;gap:8px;align-items:flex-start;"><span style="color:var(--muted2);font-size:10px;margin-top:3px;flex-shrink:0;">▸</span>${i}</li>`).join('')}
-              </ul>
-            </div>`).join('')}
-        </div>
-        <div style="padding:14px 24px 18px;border-top:1px solid var(--border);">
-          <span style="font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-right:10px;">Resources</span>
-          ${sdp.resources.map(r => {
-            const cls = r.type==='yt'?'yt':r.type==='book'?'book':'gfg';
-            return `<span class="chip ${cls}" style="margin-right:6px;margin-top:4px;display:inline-block;">${r.label}</span>`;
-          }).join('')}
-        </div>
-      </div>`;
-  });
-  html += `</div>`;
-
-  // Checklist section
-  html += `<div id="sd-sec-1" class="phase-section" style="display:none;">
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;">`;
-  SD_CHECKLIST.forEach((sec, si) => {
-    html += `
-      <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:18px;box-shadow:var(--shadow);">
-        <div style="font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#0e7490;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border);">${sec.section}</div>
-        <div style="display:flex;flex-direction:column;gap:8px;">
-          ${sec.items.map((item, ii) => `
-            <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer;">
-              <input type="checkbox" class="q-done-checkbox" style="margin-top:2px;" ${qDone[`sd-${si}-${ii}`]?'checked':''} onchange="toggleSDCheck(${si},${ii},this)">
-              <span style="font-size:12.5px;color:#3a3555;line-height:1.5;">${item}</span>
-            </label>`).join('')}
-        </div>
-      </div>`;
-  });
-  html += `</div></div>`;
-
-  // Framework cheatsheet
-  html += `<div id="sd-sec-2" class="phase-section" style="display:none;">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-
-      <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px;box-shadow:var(--shadow);grid-column:1/-1;">
-        <div style="font-size:15px;font-weight:700;color:var(--text);margin-bottom:4px;">📐 45-Minute HLD Interview Framework</div>
-        <div style="font-family:var(--mono);font-size:11px;color:var(--muted);margin-bottom:16px;">Follow this order every single time. Consistency builds confidence.</div>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;">
-          ${[
-            ["0–5 min","Clarify Requirements","Functional: what does the system do? Non-functional: scale, latency, availability, consistency?"],
-            ["5–10 min","Capacity Estimation","DAU, QPS (read/write), storage per day/year. Back-of-envelope math — don't skip this."],
-            ["10–15 min","API Design","Key endpoints, request/response format. REST or not?"],
-            ["15–20 min","Data Model","Tables/collections, key fields, indexes. SQL or NoSQL choice with reason."],
-            ["20–35 min","High-Level Diagram","Draw: Client → LB → App servers → Cache → DB → Queue → Workers. Label data flows."],
-            ["35–45 min","Deep Dive","Pick 1–2 components interviewer highlights. Go deep: sharding strategy, cache invalidation, consistency model."]
-          ].map(([time,title,desc]) => `
-            <div style="background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:12px;">
-              <div style="font-family:var(--mono);font-size:10px;color:#0e7490;letter-spacing:1px;margin-bottom:4px;">${time}</div>
-              <div style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:4px;">${title}</div>
-              <div style="font-size:11.5px;color:var(--muted);line-height:1.5;">${desc}</div>
-            </div>`).join('')}
-        </div>
-      </div>
-
-      <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px;box-shadow:var(--shadow);">
-        <div style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:14px;">🔢 Capacity Estimation Cheatsheet</div>
-        <div style="display:flex;flex-direction:column;gap:6px;">
-          ${[
-            ["1 million req/day", "≈ 12 req/sec"],
-            ["100M req/day", "≈ 1,200 req/sec"],
-            ["1 KB per user record", "1M users = 1 GB"],
-            ["1 tweet = 140 bytes", "1M tweets/day = 140 MB/day"],
-            ["1 photo = 1 MB", "100M photos/day = 100 TB/day"],
-            ["1 video = 500 MB", "1M videos = 500 TB"],
-            ["RAM latency", "~100 ns"],
-            ["SSD read latency", "~100 µs"],
-            ["HDD read latency", "~10 ms"],
-            ["Network round trip", "~150 ms (cross-region)"],
-          ].map(([k,v])=>`<div style="display:flex;justify-content:space-between;padding:7px 10px;background:var(--surface2);border-radius:5px;border:1px solid var(--border);font-size:12px;">
-            <span style="color:#3a3555;">${k}</span>
-            <span style="font-family:var(--mono);color:#0e7490;font-size:11px;">${v}</span>
-          </div>`).join('')}
-        </div>
-      </div>
-
-      <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px;box-shadow:var(--shadow);">
-        <div style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:14px;">⚖️ Common Trade-off Cheatsheet</div>
-        <div style="display:flex;flex-direction:column;gap:8px;">
-          ${[
-            ["SQL","ACID, joins, schema — use when consistency matters"],
-            ["NoSQL","Scale, flexible schema — use for high-write, denormalized data"],
-            ["Kafka","High throughput, replay, durable — for event streaming"],
-            ["Redis","Low latency cache, pub-sub, leaderboard"],
-            ["Push fanout","Low latency reads — good for low-follower users"],
-            ["Pull fanout","Low write cost — good for celebrity accounts (10M+ followers)"],
-            ["Sync API","Simple, immediate response — but tight coupling"],
-            ["Async Queue","Decoupled, resilient — but eventual consistency"],
-          ].map(([k,v])=>`<div style="padding:8px 10px;background:var(--surface2);border-radius:5px;border:1px solid var(--border);">
-            <span style="font-family:var(--mono);font-size:10px;font-weight:700;color:#8b35d6;">${k}</span>
-            <span style="font-size:11.5px;color:var(--muted);margin-left:8px;">${v}</span>
-          </div>`).join('')}
-        </div>
-      </div>
-
-    </div>
-  </div>`;
-
-  block.innerHTML = html;
-  wrap.appendChild(block);
-}
-
-function switchSDSec(idx, btn) {
-  ['sd-sec-0','sd-sec-1','sd-sec-2'].forEach((id,i) => {
-    const el = document.getElementById(id);
-    if(el) el.style.display = i===idx ? 'block' : 'none';
-  });
-  btn.closest('.phase-section-tabs').querySelectorAll('.psec-tab').forEach((b,i)=>b.classList.toggle('active',i===idx));
-}
-
-function toggleSDCheck(si, ii, cb) {
-  const key = `sd-${si}-${ii}`;
-  qDone[key] = cb.checked;
-  save();
-}
 </script>
 </body>
 </html>
